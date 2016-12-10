@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GenericPickupableObject : MonoBehaviour, IPickupable {
 
-	Collider collider;
+	Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
-		collider = GetComponent<Collider> ();
+		rb = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
@@ -18,14 +18,14 @@ public class GenericPickupableObject : MonoBehaviour, IPickupable {
 
 	public void Pickup (GameObject parent) {
 		SetParent (parent);
-		collider.attachedRigidbody.useGravity = false;
-		collider.attachedRigidbody.isKinematic = true;
+		rb.useGravity = false;
+		rb.isKinematic = true;
 	}
 
 	public void Release(GameObject parent) {
 		SetParent (parent);
-		collider.attachedRigidbody.useGravity = true;
-		collider.attachedRigidbody.isKinematic = false;
+		rb.useGravity = true;
+		rb.isKinematic = false;
 	}
 
 	private void SetParent(GameObject parent) {
@@ -34,5 +34,10 @@ public class GenericPickupableObject : MonoBehaviour, IPickupable {
 		} else {
 			this.transform.parent = null;
 		}
+	}
+
+	public void Throw (GameObject parent, Vector3 throwDirection, float throwForce) {
+		Release (parent);
+		rb.AddForce (throwDirection * throwForce, ForceMode.Impulse);
 	}
 }

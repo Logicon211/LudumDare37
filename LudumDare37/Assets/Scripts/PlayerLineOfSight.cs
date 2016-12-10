@@ -9,6 +9,8 @@ public class PlayerLineOfSight : MonoBehaviour {
 	bool isObjectInRange;
 	GameObject objectInHand;
 
+	public float throwForce = 5;
+
 	// Use this for initialization
 	void Start () {
 		isObjectInRange = false;
@@ -22,9 +24,17 @@ public class PlayerLineOfSight : MonoBehaviour {
 //			Debug.Log ("Object in range: " + objectInRange.collider.name);
 			isObjectInRange = true;
 			if (Input.GetMouseButtonDown (0)) {
-				IInteractable interactingWithObject = (IInteractable)objectInRange.collider.gameObject.GetComponent (typeof(IInteractable));
-				if (interactingWithObject != null) {
-					interactingWithObject.Interact ();
+				if (objectInHand != null) {
+					IPickupable interactingWithObject = (IPickupable)objectInRange.collider.gameObject.GetComponent (typeof(IPickupable));
+					if (interactingWithObject != null) {
+						interactingWithObject.Throw (null, this.transform.forward, throwForce);
+						objectInHand = null;
+					}
+				} else {
+					IInteractable interactingWithObject = (IInteractable)objectInRange.collider.gameObject.GetComponent (typeof(IInteractable));
+					if (interactingWithObject != null) {
+						interactingWithObject.Interact ();
+					}
 				}
 			}
 
