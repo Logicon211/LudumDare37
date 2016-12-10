@@ -436,6 +436,8 @@ GameObject:
   - component: {fileID: 92954485527505804}
   - component: {fileID: 124117687579229984}
   - component: {fileID: 81026712925209784}
+  - component: {fileID: 45948830059161624}
+  - component: {fileID: 114443102418490034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2542,7 +2544,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2909,6 +2911,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520439170177500}
   m_Mesh: {fileID: 4300008, guid: 55a74370bff64c242a615614352dd30b, type: 3}
+--- !u!45 &45948830059161624
+Skybox:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347816090175236}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 88ec9a13802800449aaf825aff3aadc7, type: 2}
 --- !u!81 &81026712925209784
 AudioListener:
   m_ObjectHideFlags: 1
@@ -3020,18 +3030,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114481396706869200
+--- !u!114 &114443102418490034
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1558143975314774}
+  m_GameObject: {fileID: 1347816090175236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47f0faedd4034a44bf347d44f74e9fc, type: 3}
+  m_Script: {fileID: 11500000, guid: e6dee5c302253884da89ab83d8fbe3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  interactionDistance: 1.7
 --- !u!114 &114947276285128096
 MonoBehaviour:
   m_ObjectHideFlags: 1
