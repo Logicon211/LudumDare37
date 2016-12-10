@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Scenery
   - Rocket
+  - SF_Door
+  - Fire
+  - Spawner
   layers:
   - Default
   - TransparentFX
