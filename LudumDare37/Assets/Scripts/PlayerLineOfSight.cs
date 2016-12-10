@@ -6,10 +6,11 @@ public class PlayerLineOfSight : MonoBehaviour {
 
 	public float interactionDistance;
 	RaycastHit objectInRange;
+	bool objectInHand;
 
 	// Use this for initialization
 	void Start () {
-		
+		objectInHand = false;
 	}
 	
 	// Update is called once per frame
