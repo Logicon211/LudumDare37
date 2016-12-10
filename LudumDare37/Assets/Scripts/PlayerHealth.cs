@@ -14,16 +14,12 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (health <= 0)
-        {
-            dead = true;
-        }
+        dead = (health <= 0);
 	}
 
     public void SetHealth(int damage)
     {
         health -= damage;
-        print("This is the health being reduced");
     }
 
     public int GetHealth()

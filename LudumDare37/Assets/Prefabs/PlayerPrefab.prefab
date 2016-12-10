@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 82378540051661810}
   - component: {fileID: 114947276285128096}
   - component: {fileID: 114632353673526454}
+  - component: {fileID: 114296280563382992}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -1203,6 +1204,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4945063631358406}
+  - component: {fileID: 54700492600619022}
+  - component: {fileID: 65569353152229234}
+  - component: {fileID: 114682656142588716}
   m_Layer: 0
   m_Name: Hand_R
   m_TagString: Untagged
@@ -2919,6 +2923,33 @@ Skybox:
   m_GameObject: {fileID: 1347816090175236}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 88ec9a13802800449aaf825aff3aadc7, type: 2}
+--- !u!54 &54700492600619022
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873111539652230}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65569353152229234
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873111539652230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.87, y: 0.53, z: 0.5}
+  m_Center: {x: -0.22, y: 0.09, z: -0.12}
 --- !u!81 &81026712925209784
 AudioListener:
   m_ObjectHideFlags: 1
@@ -3030,6 +3061,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114296280563382992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1558143975314774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4d6745dee877d4994e4749b69ba120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
 --- !u!114 &114443102418490034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3055,6 +3098,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &114682656142588716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873111539652230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9f47d6ef512174298447800ec62509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114947276285128096
 MonoBehaviour:
   m_ObjectHideFlags: 1

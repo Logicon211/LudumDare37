@@ -12,11 +12,12 @@ public class MonsterTest : MonoBehaviour {
     PlayerHealth playerHealth;
     MonsterSword sword;
     GameObject player;
+    SpawnController spawnControl;
+    MonsterHealth health;
 
     public float speed;
     public float attackRange;
 
-    public int health;          // Monster health
     public int attackDamage;    // Attack damage
 
     int counter = 0;
@@ -34,11 +35,17 @@ public class MonsterTest : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         sword = GetComponentInChildren<MonsterSword>();
         targetLookat = plTransform.position;
-
+        spawnControl = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnController>();
+        health = GetComponent<MonsterHealth>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (health.IsDead())
+        {
+            spawnControl.DecrementCounter();
+            Destroy(gameObject);
+        }
         distance = Vector3.Distance(transform.position, plTransform.position);
 
         // Checking to see if up arrow is up or down, will determine if the walk animation is to be played
@@ -81,7 +88,6 @@ public class MonsterTest : MonoBehaviour {
             playerHealth.SetHealth(attackDamage);
             ani.SetBool("Attacking", true);
             counter++;
-            print("It Hit " + counter + " times");
 
         }
     }

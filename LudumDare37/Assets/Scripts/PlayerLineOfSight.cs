@@ -57,4 +57,11 @@ public class PlayerLineOfSight : MonoBehaviour {
 			} 
 		}
 	}
+
+    public bool IsAbleToPunch()
+    {
+        if (objectInHand == null)
+            return true;
+        return false;
+    }
 }

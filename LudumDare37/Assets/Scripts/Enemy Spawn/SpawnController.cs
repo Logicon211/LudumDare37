@@ -37,4 +37,11 @@ public class SpawnController : MonoBehaviour {
         spawnPoint = Random.Range(0, spawnPoints.Length);
         spawnPoints[spawnPoint].SpawnEnemy(skeleton);
     }
+
+    public void DecrementCounter()
+    {
+        enemyCount--;
+        if (enemyCount < 0)
+            enemyCount = 0;
+    }
 }

@@ -20,7 +20,6 @@ public class MonsterSword : MonoBehaviour {
     {
         if (other.CompareTag("Player") && ani.GetBool("Attack"))
         {
-            print("Every condition has been met");
             isHitting = true;
         }
     }
@@ -28,8 +27,7 @@ public class MonsterSword : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            print("Leaving player");
+        { 
             isHitting = false;
         }
     }
