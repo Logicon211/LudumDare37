@@ -712,6 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 164174764}
   - component: {fileID: 164174763}
+  - component: {fileID: 164174765}
   m_Layer: 0
   m_Name: EngineObjectDestoyer
   m_TagString: Untagged
@@ -744,6 +745,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164174765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 164174762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8780c4760b1944bb8bb1e3ab12e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &183227066 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000014037513438, guid: 8988f71b963cd5f42ae2af5fcc124bad,
@@ -8410,7 +8422,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1972385471
+  randomSeed: 1726368994
   InitialModule:
     serializedVersion: 3
     enabled: 1
