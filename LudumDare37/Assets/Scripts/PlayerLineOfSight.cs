@@ -17,7 +17,13 @@ public class PlayerLineOfSight : MonoBehaviour {
 		Debug.DrawRay (this.transform.position, this.transform.forward * interactionDistance, Color.magenta);
 
 		if (Physics.Raycast(this.transform.position, this.transform.forward, out objectInRange, interactionDistance)) {
-			Debug.Log ("Object in range: " + objectInRange.collider.name);
+//			Debug.Log ("Object in range: " + objectInRange.collider.name);
+			if (Input.GetMouseButtonDown(0)) {
+				IInteractable interactingWithObject = (IInteractable) objectInRange.collider.gameObject.GetComponent(typeof(IInteractable));
+				if (interactingWithObject != null) {
+					interactingWithObject.Interact ();
+				}
+			}
 		}
 	}
 }
