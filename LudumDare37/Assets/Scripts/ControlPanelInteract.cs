@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestInteraction : MonoBehaviour, IInteractable {
+public class ControlPanelInteract : MonoBehaviour, IInteractable {
 
 	private Light myLight;
 	public float maxIntensity = 1f;
@@ -13,7 +13,7 @@ public class TestInteraction : MonoBehaviour, IInteractable {
 
 
 	void Start(){
-		myLight = GetComponent<Light>();
+		myLight = transform.FindChild("PointLight").GetComponent<Light>();
 	}    
 	void Update(){
 		currentIntensity = Mathf.MoveTowards(myLight.intensity,targetIntensity, Time.deltaTime*pulseSpeed);
@@ -27,7 +27,9 @@ public class TestInteraction : MonoBehaviour, IInteractable {
 		myLight.intensity = currentIntensity;
 	}
 
-	public void Interact () {
-		Debug.Log ("This Interaction Works");
+	public void Interact() {
+		Debug.Log ("Clicking on Control Panel");
+		myLight.color = Color.green;
+		pulseSpeed = 6f;
 	}
 }
