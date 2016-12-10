@@ -7,6 +7,7 @@ public class MonsterTest : MonoBehaviour {
 
     Animator ani;   // Animation component
     Transform plTransform;
+    Vector3 targetLookat;
 
     public GameObject player;
     public float speed;
@@ -20,8 +21,9 @@ public class MonsterTest : MonoBehaviour {
 	void Start () {
         ani = GetComponent<Animator>();
         plTransform = player.GetComponent<Transform>();
+        targetLookat = plTransform.position;
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,14 +41,16 @@ public class MonsterTest : MonoBehaviour {
             ani.SetBool("Attack", true);
         }
         CheckKeyPresses();
-        transform.LookAt(plTransform);
+        targetLookat = plTransform.position;
+        targetLookat.y = transform.position.y;
+        transform.LookAt(targetLookat);
 	}
 
     void CheckKeyPresses()
     {
         if (walking == true && ani.GetBool("Attack") == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(plTransform.position.x, 0.0f, plTransform.position.z), speed * Time.deltaTime);
         }
     }
 }
