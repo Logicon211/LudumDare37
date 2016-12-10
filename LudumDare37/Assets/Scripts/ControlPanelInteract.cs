@@ -9,11 +9,14 @@ public class ControlPanelInteract : MonoBehaviour, IInteractable {
 	public float minIntensity = 0f;
 	public float pulseSpeed = 1f; //here, a value of 0.5f would take 2 seconds and a value of 2f would take half a second
 	private float targetIntensity = 0f;
-	private float currentIntensity;    
+	private float currentIntensity;
+	private bool clicked = false;
+	public ControlPanelTaskController controlPanelTaskController;
 
 
 	void Start(){
 		myLight = transform.FindChild("PointLight").GetComponent<Light>();
+		controlPanelTaskController = GameObject.FindObjectOfType<ControlPanelTaskController> ();
 	}    
 	void Update(){
 		currentIntensity = Mathf.MoveTowards(myLight.intensity,targetIntensity, Time.deltaTime*pulseSpeed);
@@ -28,8 +31,12 @@ public class ControlPanelInteract : MonoBehaviour, IInteractable {
 	}
 
 	public void Interact() {
-		Debug.Log ("Clicking on Control Panel");
-		myLight.color = Color.green;
-		pulseSpeed = 6f;
+		if (!clicked) {
+			Debug.Log ("Clicking on Control Panel");
+			myLight.color = Color.green;
+			pulseSpeed = 6f;
+			clicked = true;
+			controlPanelTaskController.decrementNumberOfPanels ();
+		}
 	}
 }

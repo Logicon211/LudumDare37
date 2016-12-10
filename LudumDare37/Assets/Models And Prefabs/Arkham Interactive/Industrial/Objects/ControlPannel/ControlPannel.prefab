@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 20500000}
   m_Layer: 0
   m_Name: ControlPannel
-  m_TagString: Untagged
+  m_TagString: ControlPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -592,3 +592,4 @@ MonoBehaviour:
   maxIntensity: 8
   minIntensity: 0.1
   pulseSpeed: 18
+  controlPanelTaskController: {fileID: 0}
