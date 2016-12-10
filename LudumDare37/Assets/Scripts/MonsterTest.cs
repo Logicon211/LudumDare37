@@ -7,19 +7,31 @@ public class MonsterTest : MonoBehaviour {
     Animator ani;   // Animation component
     Transform plTransform;
     Vector3 targetLookat;
+    BoxCollider weaponCollider;
+    CapsuleCollider targetCollider;
+    PlayerHealth playerHealth;
+    MonsterSword sword;
 
     public GameObject player;
     public float speed;
+    public float attackRange;
+
+    public int health;          // Monster health
+    public int attackDamage;    // Attack damage
+
+    int counter = 0;
 
     float distance;
     bool walking = false;
-
-    float ATTACK_RANGE = 0.3f;
+    bool attackable = false;    // Attack timer, if false, attack can't go throguh
 
 	// Use this for initialization
 	void Start () {
         ani = GetComponent<Animator>();
         plTransform = player.GetComponent<Transform>();
+        targetCollider = player.GetComponent<CapsuleCollider>();
+        playerHealth = player.GetComponent<PlayerHealth>();
+        sword = GetComponentInChildren<MonsterSword>();
         targetLookat = plTransform.position;
 
     }
@@ -29,7 +41,7 @@ public class MonsterTest : MonoBehaviour {
         distance = Vector3.Distance(transform.position, plTransform.position);
 
         // Checking to see if up arrow is up or down, will determine if the walk animation is to be played
-        if (distance > ATTACK_RANGE) { 
+        if (distance > attackRange) { 
             ani.SetBool("Walk", true);
             walking = true;
         }
@@ -39,17 +51,40 @@ public class MonsterTest : MonoBehaviour {
             walking = false;
             ani.SetBool("Attack", true);
         }
-        CheckKeyPresses();
-        targetLookat = plTransform.position;
-        targetLookat.y = transform.position.y;
-        transform.LookAt(targetLookat);
+        CheckWalking();
+        CheckAttack();
+        UpdateLookAt();
 	}
 
-    void CheckKeyPresses()
+    // Need to wait for the Attack parameter to be false so the skeleton doesn't slide and perform its attack animation
+    void CheckWalking()
     {
         if (walking == true && ani.GetBool("Attack") == false)
         {
+            // Making a new vector3 for the target to walk at that ignores the y axis, this is to prevent the model from walking into space
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(plTransform.position.x, 0.0f, plTransform.position.z), speed * Time.deltaTime);
         }
+    }
+
+    // Check to see if the attack lands against the player, if so, we will call SetHealth() from, the PlayerHealth script to change
+    // their health based on the monsters attack
+    void CheckAttack()
+    {
+        if (sword.GetIsHitting() && ani.GetBool("Attacking") == false)
+        {
+            playerHealth.SetHealth(attackDamage);
+            ani.SetBool("Attacking", true);
+            counter++;
+            print("It Hit " + counter + " times");
+
+        }
+    }
+
+    // Updates the LookAt for the skeleton, while setting the y position to be the model's y so it doesnt do sick flips
+    void UpdateLookAt()
+    {
+        targetLookat = plTransform.position;
+        targetLookat.y = transform.position.y;
+        transform.LookAt(targetLookat);
     }
 }
