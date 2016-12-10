@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4530049324972884}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TwistTh_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4568142611466114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IndexIK_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4839401408251530}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IndexOut_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4508481389501876}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CThumb_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4342729516579010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ThumbIK_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4940689663105152}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ThumbOut_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4986720905270738}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RingOut_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4518147332913866}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TwistThumb_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4394549865787390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CPink_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4392419389049160}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RingMid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4048982085380956}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IndexMid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4149586634831204}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RingIK_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4474375659847708}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PinkOut_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4433985565115490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LongMid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4887650327884664}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ThumbIn_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4063072236858016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IndexIn_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4676268267942266}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CLong_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +919,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4451785069610974}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CIndex_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4270305729744234}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CRing_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1024,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4334153691725564}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PinkIK_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4635930892179418}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PinkIn_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1144,7 +1144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4192942990753328}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LongOut_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4979990152033162}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hold_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4943568008351700}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PinkMid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 54700492600619022}
   - component: {fileID: 65569353152229234}
   - component: {fileID: 114682656142588716}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4674771276407368}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LongIn_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4639656428232836}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RingIn_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1252,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4552434472742602}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LongIK_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2350,7 +2350,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558143975314774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0234463, y: 1, z: -3.159812}
+  m_LocalPosition: {x: 0, y: 1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4391581107368644}
@@ -3085,6 +3085,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDistance: 1.7
+  colliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
   throwForce: 5
 --- !u!114 &114632353673526454
 MonoBehaviour:
