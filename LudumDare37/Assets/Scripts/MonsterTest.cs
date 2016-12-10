@@ -54,6 +54,11 @@ public class MonsterTest : MonoBehaviour {
         CheckWalking();
         CheckAttack();
         UpdateLookAt();
+
+        if (playerHealth.getDead())
+        {
+            print("STOP THE PLAYERS DEAD FUCK");
+        }
 	}
 
     // Need to wait for the Attack parameter to be false so the skeleton doesn't slide and perform its attack animation

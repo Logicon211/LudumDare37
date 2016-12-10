@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour {
 
     public int health;
+
+    bool dead = false;
     
 	// Use this for initialization
 	void Start () {
@@ -16,11 +18,25 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (health <= 0)
+        {
+            dead = true;
+        }
 	}
 
     public void SetHealth(int damage)
     {
-        health += damage;
+        health -= damage;
+        print("This is the health being reduced");
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public bool getDead()
+    {
+        return dead;
     }
 }
