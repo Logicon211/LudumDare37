@@ -11,8 +11,8 @@ public class MonsterTest : MonoBehaviour {
     CapsuleCollider targetCollider;
     PlayerHealth playerHealth;
     MonsterSword sword;
+    GameObject player;
 
-    public GameObject player;
     public float speed;
     public float attackRange;
 
@@ -27,6 +27,7 @@ public class MonsterTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        player = GameObject.FindGameObjectWithTag("Player");
         ani = GetComponent<Animator>();
         plTransform = player.GetComponent<Transform>();
         targetCollider = player.GetComponent<CapsuleCollider>();

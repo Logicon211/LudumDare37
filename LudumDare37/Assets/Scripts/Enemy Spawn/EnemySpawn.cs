@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour {
 
-    public int maxEnemies;
 
-    EnemySpawn[] spawnPoints;
 
 	// Use this for initialization
 	void Start () {
-        spawnPoints = GetComponentsInChildren<EnemySpawn>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void SpawnEnemy(GameObject enemy)
+    {
+        Instantiate(enemy, new Vector3(transform.position.x, 0.0f, transform.position.z), Quaternion.identity);
+    }
+
+    public void TestSpawnMethod()
+    {
+        print("This is the method test");
+    }
 }

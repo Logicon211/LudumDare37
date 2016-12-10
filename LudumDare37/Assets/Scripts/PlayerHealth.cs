@@ -10,10 +10,6 @@ public class PlayerHealth : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-		if (health == 0)
-        {
-            health = 100;
-        }
 	}
 	
 	// Update is called once per frame
