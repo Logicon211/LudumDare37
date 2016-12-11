@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hit : MonoBehaviour {
 
 	public int lifetime = 2;
+
 	// Use this for initialization
 	void Start () {
 		Destroy(this.gameObject, lifetime);
