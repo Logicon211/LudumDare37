@@ -8,7 +8,7 @@ public class MonsterHealth : MonoBehaviour {
 
     public int health;
     public AudioClip damageSound;
-	public GameObject hitEffect;
+	//public GameObject hitEffect;
 
     bool isDead;
 
@@ -24,7 +24,7 @@ public class MonsterHealth : MonoBehaviour {
 
     public void SetHealth(int damage)
     {
-		Instantiate(hitEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+		//Instantiate(hitEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         audio.PlayOneShot(damageSound, 0.7f);
         health -= damage;
     }
