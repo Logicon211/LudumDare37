@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroySelf : MonoBehaviour {
+public class Hit : MonoBehaviour {
 
 	public int lifetime = 2;
 	// Use this for initialization
