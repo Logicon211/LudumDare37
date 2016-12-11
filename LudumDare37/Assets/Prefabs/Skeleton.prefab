@@ -1361,7 +1361,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1404,6 +1404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damageSound: {fileID: 8300000, guid: 2da0f4226d614492eaf48171c98f5ccb, type: 3}
+  hitEffect: {fileID: 136674, guid: 8d3a7fbc62f810c43b8c42fdb2978ef4, type: 2}
 --- !u!114 &114192830761453994
 MonoBehaviour:
   m_ObjectHideFlags: 1
