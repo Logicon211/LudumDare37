@@ -16,12 +16,12 @@ public class FistScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        print(isHitting);
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") && ani.GetBool("Punch"))
+        if (other.CompareTag("Enemy"))
         {
             isHitting = other;
         }
