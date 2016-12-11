@@ -9,6 +9,7 @@ public class MonsterGetsHitByObject : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         health = gameObject.GetComponent<MonsterHealth>();
+
 	}
 	
 	// Update is called once per frame
