@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dee5c302253884da89ab83d8fbe3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 1.7
+  interactionDistance: 2
   colliderMask:
     serializedVersion: 2
     m_Bits: 4294967291
