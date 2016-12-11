@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour {
     public int attackDamage;
     public AudioClip damaged;
 
+    int counter = 0;
+
     // Use this for initialization
     void Start () {
         ani = GetComponentInChildren<Animator>();
@@ -38,10 +40,12 @@ public class PlayerAttack : MonoBehaviour {
 
         if ( ani.GetBool("Punch") && fist.GetIsHitting() != null && ani.GetBool("Punching") == false)
         {
-            ani.SetBool("Punching", true);
             target = fist.GetIsHitting().gameObject;
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
+            ani.SetBool("Punching", true);
+            counter++;
+            print(counter);
 
         }
     }

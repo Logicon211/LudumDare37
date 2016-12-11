@@ -3102,6 +3102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  redDeathOverlayObject: {fileID: 0}
 --- !u!114 &114682656142588716
 MonoBehaviour:
   m_ObjectHideFlags: 1
