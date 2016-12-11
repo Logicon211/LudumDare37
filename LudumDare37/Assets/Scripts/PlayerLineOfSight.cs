@@ -109,4 +109,8 @@ public class PlayerLineOfSight : MonoBehaviour {
 			interactionText.text = "";
 		}
 	}
+
+	public GameObject GetEquipedItem() {
+		return equipedItem;
+	}
 }

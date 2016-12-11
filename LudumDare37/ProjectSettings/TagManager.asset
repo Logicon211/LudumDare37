@@ -17,6 +17,7 @@ TagManager:
   - Nuke
   - Light
   - Wrench
+  - RepairableObject
   layers:
   - Default
   - TransparentFX

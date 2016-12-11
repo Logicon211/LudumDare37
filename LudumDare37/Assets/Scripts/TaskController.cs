@@ -9,11 +9,13 @@ public class TaskController : MonoBehaviour {
 	private bool controlPanelTaskComplete = false;
 	private bool nukeTaskComplete = false;
 	private bool phoneTaskComplete = false;
+	private bool repairableObjectTaskComplete = false;
 
 	public Text taskListTitle;
 	public Text lightSwitchTaskText;
 	public Text controlPanelTaskText;
 	public Text nukeTaskText;
+	public Text repairableObjectTaskText;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,7 @@ public class TaskController : MonoBehaviour {
 		lightSwitchTaskText.text = "- Hit the lights";
 		controlPanelTaskText.text = "- Activate all control panels";
 		nukeTaskText.text = "- Load all nukes into engine";
+		repairableObjectTaskText.text = "- Repair all smoking objects";
 	}
 	
 	// Update is called once per frame
@@ -67,13 +70,23 @@ public class TaskController : MonoBehaviour {
 
 	public void TriggerPhoneTaskComplete(){
 		phoneTaskComplete = true;
+		CheckVictoryCondition ();
 		//other shit
+	}
+	public bool GetRepairableObjectTaskComplete () {
+		return controlPanelTaskComplete;
+	}
+
+	public void TriggerRepairableObjectTaskComplete() {
+		repairableObjectTaskComplete = true;
+		repairableObjectTaskText.supportRichText = true;
+		repairableObjectTaskText.text = "<color=#292929ff>- Repair all smoking objects</color>";
 		CheckVictoryCondition ();
 	}
 
 	public void CheckVictoryCondition() {
 		
-		if (lightSwitchTaskComplete && controlPanelTaskComplete && nukeTaskComplete && phoneTaskComplete) {
+		if (lightSwitchTaskComplete && controlPanelTaskComplete && nukeTaskComplete && phoneTaskComplete && repairableObjectTaskComplete) {
 			//Change scene or something?
 		}
 	}
