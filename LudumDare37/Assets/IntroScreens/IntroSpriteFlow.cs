@@ -11,7 +11,7 @@ public class IntroSpriteFlow : MonoBehaviour
 	private SpriteRenderer spriteRenderer;
 	public GUITexture gui;
 
-	public string levelToLoad;
+	public int levelToLoadIndex;
 
 	void Start ()
 	{
@@ -114,7 +114,7 @@ public class IntroSpriteFlow : MonoBehaviour
 		if(GetComponent<GUITexture>().color.a >= 0.95f) {
 			// ... reload the level.
 			//Application.LoadLevel(levelToLoad);
-			LoadingScreenManager.LoadScene(1);
+			LoadingScreenManager.LoadScene(levelToLoadIndex);
 		}
 	}
 }
