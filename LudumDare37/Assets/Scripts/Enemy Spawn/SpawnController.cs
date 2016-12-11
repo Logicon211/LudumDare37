@@ -27,7 +27,6 @@ public class SpawnController : MonoBehaviour {
         {
             AddEnemy();
             enemyCount++;
-            print(enemyCount);
             elapsedTime = 0.0f;
         }
 	}

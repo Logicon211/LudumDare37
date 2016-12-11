@@ -27,8 +27,6 @@ public class MonsterGetsHitByObject : MonoBehaviour {
 
             if (mass*vel >= 4.0f)
             {
-				print("Hit by thrown thing");
-                print(mass * vel);
                 health.SetHealth(10);
             }
         }

@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour {
     public int attackDamage;
     public AudioClip damaged;
 
+    bool startTimer = false;
+    float punchTimer = .2f;
     int counter = 0;
 
     // Use this for initialization
@@ -29,24 +31,34 @@ public class PlayerAttack : MonoBehaviour {
 		if (Input.GetMouseButton(0) && los.IsAbleToPunch())
         {
             if (!ani.GetBool("Punch"))
+            {
                 audio.PlayOneShot(damaged, 0.7f);
+                startTimer = true;
+                punchTimer = .2f;
+            }
             ani.SetBool("Punch", true);
         }
+        if (startTimer)
+            punchTimer -= Time.deltaTime;
         CheckAttacking();
 	}
 
     void CheckAttacking()
     {
 
-        if ( ani.GetBool("Punch") && fist.GetIsHitting() != null && ani.GetBool("Punching") == false)
+        if ( ani.GetBool("Punch") && fist.GetIsHitting() != null && ani.GetBool("Punching") == false && punchTimer <= 0.0f && punchTimer >= -.2f)
         {
             target = fist.GetIsHitting().gameObject;
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
             ani.SetBool("Punching", true);
-            counter++;
-            print(counter);
-
+            punchTimer = .2f;
+            startTimer = false;
         }
+    }
+
+    void DecrementTimer()
+    {
+
     }
 }

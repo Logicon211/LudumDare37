@@ -98,7 +98,7 @@ public class MonsterTest : MonoBehaviour {
     // their health based on the monsters attack
     void CheckAttack()
     {
-        if (sword.GetIsHitting() && ani.GetBool("Attacking") == false)
+        if (sword.GetIsHitting() && ani.GetBool("Attacking") == false && !health.IsDead())
         {
             playerHealth.SetHealth(attackDamage);
             ani.SetBool("Attacking", true);
