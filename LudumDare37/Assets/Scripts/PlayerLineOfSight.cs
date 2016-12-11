@@ -33,6 +33,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 		IPickupable pickupableObject = null;
 		IInteractable interactableObject = null;
 		IEquipable equipableObject = null;
+		IRepairable repairableObject = null;
 
 		if (Physics.Raycast (this.transform.position, this.transform.forward, out objectInRange, interactionDistance, colliderMask)) {
 //			Debug.Log ("Object in range: " + objectInRange.collider.name);
@@ -40,6 +41,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 			pickupableObject = (IPickupable)objectInRange.collider.gameObject.GetComponent (typeof(IPickupable));
 			interactableObject = (IInteractable)objectInRange.collider.gameObject.GetComponent (typeof(IInteractable));
 			equipableObject = (IEquipable)objectInRange.collider.gameObject.GetComponent (typeof(IEquipable));
+			repairableObject = (IRepairable)objectInRange.collider.gameObject.GetComponent (typeof(IRepairable));
 
 			isObjectInRange = true;
 			if (Input.GetKeyDown(KeyCode.E)) {
@@ -68,6 +70,15 @@ public class PlayerLineOfSight : MonoBehaviour {
 				}
 			}
 
+			if (Input.GetMouseButtonDown (0)) {
+				if (objectInHand == null) {
+					if (repairableObject != null && equipedItem != null && equipedItem.CompareTag("Wrench")) {
+						Debug.Log ("In repair");
+						repairableObject.Repair ();
+					}
+				}
+			}
+
 		} else {
 			isObjectInRange = false;
 		}
@@ -87,7 +98,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 			} 
 		}
 
-		updateInteractionText (interactableObject, pickupableObject, equipableObject);
+		updateInteractionText (interactableObject, pickupableObject, equipableObject, repairableObject);
 	}
 
     public bool IsAbleToPunch()
@@ -97,7 +108,7 @@ public class PlayerLineOfSight : MonoBehaviour {
         return false;
     }
 
-	private void updateInteractionText(IInteractable interactable, IPickupable pickupable, IEquipable equipable) {
+	private void updateInteractionText(IInteractable interactable, IPickupable pickupable, IEquipable equipable, IRepairable repairable) {
 		
 		if (interactable != null && objectInHand == null) {
 			interactionText.text = "[E] to interact";
@@ -105,6 +116,8 @@ public class PlayerLineOfSight : MonoBehaviour {
 			interactionText.text = "[E] to pickup";
 		} else if (equipable != null && equipedItem == null && objectInHand == null) {
 			interactionText.text = "[E] to equip";
+		} else if (repairable != null && equipedItem != null && equipedItem.CompareTag("Wrench")) {
+			interactionText.text = "[Mouse0] to repair";
 		} else { 
 			interactionText.text = "";
 		}
