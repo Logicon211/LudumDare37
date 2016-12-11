@@ -16,7 +16,6 @@ public class FistScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        print(isHitting);
 	}
 
     void OnTriggerEnter(Collider other)
