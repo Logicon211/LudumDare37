@@ -17,10 +17,11 @@ TagManager:
   - Nuke
   - Light
   - Wrench
-  - Repairable Object
-  - phone
+<<<<<<< HEAD
   - RepairableObject
+=======
   - phone
+>>>>>>> Phone task complete
   layers:
   - Default
   - TransparentFX

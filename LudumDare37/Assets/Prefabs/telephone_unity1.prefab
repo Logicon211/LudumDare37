@@ -185,5 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf906a5bcf327d2498a090f968c3b969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phone_ringing: {fileID: 8300000, guid: 22bbe2c8943e7ec4690c240116edf0d4, type: 3}
+  phone_ringing: {fileID: 8300000, guid: 717ca08731aff72478a778a667d76c1a, type: 3}
   conversation_clip: {fileID: 8300000, guid: 43371aeea59743445988388a21d716ef, type: 3}
+  audio: {fileID: 0}
