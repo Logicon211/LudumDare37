@@ -7,16 +7,19 @@ public class PlayerHealth : MonoBehaviour {
 
     public int health;
 	public GameObject redDeathOverlayObject;
+	public GameObject redSuperDeathOverlayObject;
 	public AudioClip player_hurt;
 
 	AudioSource audio;
 	private Image redDeathImage;
+	private Image redSuperDeathImage;
 
     bool dead = false;
     
 	// Use this for initialization
 	void Start () {
 		redDeathImage = redDeathOverlayObject.GetComponent<Image> ();
+		redSuperDeathImage = redSuperDeathOverlayObject.GetComponent<Image> ();
 		audio = GetComponent<AudioSource>();
 	}
 	
@@ -24,7 +27,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
         dead = (health <= 0);
 		if (dead) {
-			redDeathImage.enabled = true;
+			redSuperDeathImage.enabled = true;
 		}
 	}
 
