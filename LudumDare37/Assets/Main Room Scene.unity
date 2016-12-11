@@ -4651,11 +4651,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4045927137048768, guid: 0a32eb7de2f475b4c9297c23a9c1b1bd,
     type: 2}
   m_PrefabInternal: {fileID: 536492390}
---- !u!1 &1050987305 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1498260975937598, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1162431714}
 --- !u!1001 &1064531269
 Prefab:
   m_ObjectHideFlags: 0
@@ -5063,11 +5058,6 @@ Prefab:
       propertyPath: redDeathOverlayObject
       value: 
       objectReference: {fileID: 1108612686}
-    - target: {fileID: 114443102418490034, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
-        type: 2}
-      propertyPath: equipableWrench
-      value: 
-      objectReference: {fileID: 1050987305}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44b4f4ba21cb6124f86dadad01e6e9a6, type: 2}
   m_IsPrefabParent: 0

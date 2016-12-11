@@ -14,6 +14,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 	private GameObject equipedItem;
 	public GameObject equipableWrench;
 	public GameObject equipableDumbell;
+	private Animator animator;
 
 	public float throwForce = 5;
 
@@ -22,6 +23,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 		isObjectInRange = false;
 		interactionText.text = "";
 		equipableWrench.SetActive (false);
+		animator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -52,6 +54,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 						equipedItem = equipableWrench;
 						equipableWrench.SetActive (true);
 						objectInRange.collider.gameObject.SetActive(false);
+						animator.SetBool("hasItem", true);
 					}
 				}
 			}
