@@ -1227,8 +1227,8 @@ GameObject:
   m_Component:
   - component: {fileID: 310548925}
   - component: {fileID: 310548928}
-  - component: {fileID: 310548927}
   - component: {fileID: 310548926}
+  - component: {fileID: 310548927}
   m_Layer: 0
   m_Name: North Wall
   m_TagString: Untagged
@@ -1280,8 +1280,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &310548927
-MeshCollider:
+--- !u!65 &310548927
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1290,10 +1290,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 10.000006, y: -11.001123, z: 10.000004}
+  m_Center: {x: 0.0000000066227406, y: -5.499703, z: -0.00000079472863}
 --- !u!33 &310548928
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3401,8 +3399,8 @@ GameObject:
   m_Component:
   - component: {fileID: 758279383}
   - component: {fileID: 758279386}
-  - component: {fileID: 758279385}
   - component: {fileID: 758279384}
+  - component: {fileID: 758279387}
   m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
@@ -3454,8 +3452,15 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &758279385
-MeshCollider:
+--- !u!33 &758279386
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758279382}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &758279387
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -3464,17 +3469,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &758279386
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 758279382}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 10, y: -1.6657048, z: 9.999998}
+  m_Center: {x: 0, y: -0.71001434, z: 0}
 --- !u!1001 &767719426
 Prefab:
   m_ObjectHideFlags: 0
@@ -6465,8 +6461,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1627713527}
   - component: {fileID: 1627713530}
-  - component: {fileID: 1627713529}
   - component: {fileID: 1627713528}
+  - component: {fileID: 1627713529}
   m_Layer: 0
   m_Name: South Wall
   m_TagString: Untagged
@@ -6518,8 +6514,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &1627713529
-MeshCollider:
+--- !u!65 &1627713529
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -6528,10 +6524,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 10, y: 14.637783, z: 10.000004}
+  m_Center: {x: -0.000000006622739, y: -7.318589, z: 0.0000022252402}
 --- !u!33 &1627713530
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6901,8 +6895,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1727156116}
   - component: {fileID: 1727156119}
-  - component: {fileID: 1727156118}
   - component: {fileID: 1727156117}
+  - component: {fileID: 1727156120}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -6954,8 +6948,15 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &1727156118
-MeshCollider:
+--- !u!33 &1727156119
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727156115}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1727156120
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -6964,17 +6965,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1727156119
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1727156115}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 10, y: 9.557729, z: 9.999998}
+  m_Center: {x: 0, y: -4.744603, z: 0}
 --- !u!1001 &1738498158
 Prefab:
   m_ObjectHideFlags: 0
@@ -8501,7 +8493,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 286737062
+  randomSeed: -1473173783
   InitialModule:
     serializedVersion: 3
     enabled: 1
