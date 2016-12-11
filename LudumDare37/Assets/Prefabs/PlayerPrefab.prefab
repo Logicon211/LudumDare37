@@ -3090,6 +3090,7 @@ MonoBehaviour:
   colliderMask:
     serializedVersion: 2
     m_Bits: 4294967291
+  interactionText: {fileID: 0}
   throwForce: 5
 --- !u!114 &114632353673526454
 MonoBehaviour:

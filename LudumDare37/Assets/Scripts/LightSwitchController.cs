@@ -31,7 +31,7 @@ public class LightSwitchController : MonoBehaviour, IInteractable {
 			foreach (GameObject light in lights) {
 				light.SetActive (true);
 			}
-			parentController.triggerLightSwitchTaskComplete ();
+			parentController.TriggerLightSwitchTaskComplete ();
 		}
 	}
 }
