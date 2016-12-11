@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour {
 
     void CheckAttacking()
     {
-        if (fist.GetIsHitting() != null && ani.GetBool("Punching") == false)
+        if ( ani.GetBool("Punch") && fist.GetIsHitting() != null && ani.GetBool("Punching") == false)
         {
             target = fist.GetIsHitting().gameObject;
             monsterHealth = target.GetComponent<MonsterHealth>();
