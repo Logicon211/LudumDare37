@@ -8,6 +8,7 @@ public class TaskController : MonoBehaviour {
 	private bool lightSwitchTaskComplete = false;
 	private bool controlPanelTaskComplete = false;
 	private bool nukeTaskComplete = false;
+	private bool phoneTaskComplete = false;
 
 	public Text taskListTitle;
 	public Text lightSwitchTaskText;
@@ -30,7 +31,7 @@ public class TaskController : MonoBehaviour {
 	public bool GetControlPanelTaskComplete () {
 		return controlPanelTaskComplete;
 	}
-
+		
 	public void TriggerControlPanelTaskComplete() {
 		controlPanelTaskComplete = true;
 		controlPanelTaskText.supportRichText = true;
@@ -60,9 +61,19 @@ public class TaskController : MonoBehaviour {
 		CheckVictoryCondition ();
 	}
 
+	public bool GetPhoneTaskComplete(){
+		return phoneTaskComplete;
+	}
+
+	public void TriggerPhoneTaskComplete(){
+		phoneTaskComplete = true;
+		//other shit
+		CheckVictoryCondition ();
+	}
+
 	public void CheckVictoryCondition() {
 		
-		if (lightSwitchTaskComplete && controlPanelTaskComplete && nukeTaskComplete) {
+		if (lightSwitchTaskComplete && controlPanelTaskComplete && nukeTaskComplete && phoneTaskComplete) {
 			//Change scene or something?
 		}
 	}
