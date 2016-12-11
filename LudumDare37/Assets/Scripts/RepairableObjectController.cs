@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepairableObjectController : MonoBehaviour, IInteractable {
+public class RepairableObjectController : MonoBehaviour, IRepairable {
 
 	private bool clicked = false;
 	public RepairableObjectTaskController repairableObjecttaskController;
@@ -20,7 +20,7 @@ public class RepairableObjectController : MonoBehaviour, IInteractable {
 		
 	}
 
-	public void Interact() {
+	public void Repair() {
 		if (!clicked && playerLineOfSiteController.GetEquipedItem() != null && playerLineOfSiteController.GetEquipedItem().CompareTag("Wrench")) {
 			Debug.Log ("Clicking on Repairable Object");
 			clicked = true;
