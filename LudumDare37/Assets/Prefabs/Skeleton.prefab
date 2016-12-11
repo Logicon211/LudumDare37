@@ -1427,8 +1427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  attackRange: 2
+  attackRange: 3
   attackDamage: 10
+  viewAngle: 90
   attack: {fileID: 8300000, guid: 17a64018f41d043169872a142113c3dc, type: 3}
   spawnSound: {fileID: 8300000, guid: 0dac35a0466ff4cb9a3d2c006dc956af, type: 3}
   randomSound: {fileID: 8300000, guid: 4c83c48917ba64a0596defd48992603c, type: 3}

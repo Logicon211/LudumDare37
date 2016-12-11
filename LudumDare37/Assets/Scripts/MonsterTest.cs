@@ -19,6 +19,7 @@ public class MonsterTest : MonoBehaviour {
     public float speed;
     public float attackRange;
     public int attackDamage;    // Attack damage
+    public float viewAngle;
     public AudioClip attack;
     public AudioClip spawnSound;
     public AudioClip randomSound;
@@ -28,7 +29,7 @@ public class MonsterTest : MonoBehaviour {
     float distance;
     bool walking = false;
     bool attackable = false;    // Attack timer, if false, attack can't go throguh
-    float attackTimer;
+    float attackTimer = 0.7f;
     bool startTimer = false;
 
 	// Use this for initialization
@@ -71,7 +72,7 @@ public class MonsterTest : MonoBehaviour {
             walking = false;
             if (!ani.GetBool("Attack"))
             {
-                attackTimer = 0.4f;
+                attackTimer = .8f;
                 startTimer = true;
                 audio.PlayOneShot(attack, 0.7f);
             }
@@ -106,13 +107,17 @@ public class MonsterTest : MonoBehaviour {
     // their health based on the monsters attack
     void CheckAttack()
     {
-        if (sword.GetIsHitting() && ani.GetBool("Attacking") == false && !health.IsDead() && attackTimer <= 0.0f && attackTimer >= -0.5f)
+        distance = Vector3.Distance(transform.position, plTransform.position);
+        Vector3 v = plTransform.position - transform.position;
+
+        if (distance <= (attackRange) && ani.GetBool("Attacking") == false && !health.IsDead() && attackTimer <= 0.0f && attackTimer >= -0.5f)
         {
             print("swing went through");
             playerHealth.SetHealth(attackDamage);
             ani.SetBool("Attacking", true);
             counter++;
         }
+
     }
 
     // Updates the LookAt for the skeleton, while setting the y position to be the model's y so it doesnt do sick flips
