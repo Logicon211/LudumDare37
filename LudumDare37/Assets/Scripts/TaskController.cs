@@ -27,33 +27,43 @@ public class TaskController : MonoBehaviour {
 		
 	}
 
-	public bool getControlPanelTaskComplete () {
+	public bool GetControlPanelTaskComplete () {
 		return controlPanelTaskComplete;
 	}
 
-	public void triggerControlPanelTaskComplete() {
+	public void TriggerControlPanelTaskComplete() {
 		controlPanelTaskComplete = true;
 		controlPanelTaskText.supportRichText = true;
 		controlPanelTaskText.text = "<color=#292929ff>- Activate all control panels</color>";
+		CheckVictoryCondition ();
 	}
 
-	public bool getNukeTaskComplete () {
+	public bool GetNukeTaskComplete () {
 		return controlPanelTaskComplete;
 	}
 
-	public void triggerNukeTaskComplete() {
+	public void TriggerNukeTaskComplete() {
 		nukeTaskComplete = true;
 		nukeTaskText.supportRichText = true;
 		nukeTaskText.text = "<color=#292929ff>- Load all nukes into engine</color>";
+		CheckVictoryCondition ();
 	}
 
-	public bool getLightSwitchTaskComplete () {
+	public bool GetLightSwitchTaskComplete () {
 		return controlPanelTaskComplete;
 	}
 
-	public void triggerLightSwitchTaskComplete() {
+	public void TriggerLightSwitchTaskComplete() {
 		lightSwitchTaskComplete = true;
 		lightSwitchTaskText.supportRichText = true;
 		lightSwitchTaskText.text = "<color=#292929ff>- Hit the lights</color>";
+		CheckVictoryCondition ();
+	}
+
+	public void CheckVictoryCondition() {
+		
+		if (lightSwitchTaskComplete && controlPanelTaskComplete && nukeTaskComplete) {
+			//Change scene or something?
+		}
 	}
 }
