@@ -5048,21 +5048,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114632353673526454, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
-        type: 2}
-      propertyPath: redDeathOverlayObject
-      value: 
-      objectReference: {fileID: 1108612686}
-    - target: {fileID: 114632353673526454, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
-        type: 2}
-      propertyPath: player_hurt
-      value: 
-      objectReference: {fileID: 8300000, guid: a95ead0d147d74e719f1017bd4dd580b, type: 3}
     - target: {fileID: 114443102418490034, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
         type: 2}
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 2094244328}
+    - target: {fileID: 114632353673526454, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
+        type: 2}
+      propertyPath: redDeathOverlayObject
+      value: 
+      objectReference: {fileID: 1108612686}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44b4f4ba21cb6124f86dadad01e6e9a6, type: 2}
   m_IsPrefabParent: 0

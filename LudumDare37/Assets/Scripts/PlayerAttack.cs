@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour {
     public int attackDamage;
     public AudioClip damaged;
 
+	public GameObject hitEffect;
+
     bool startTimer = false;
     float punchTimer = .2f;
     int counter = 0;
@@ -49,6 +51,8 @@ public class PlayerAttack : MonoBehaviour {
         if ( ani.GetBool("Punch") && fist.GetIsHitting() != null && ani.GetBool("Punching") == false && punchTimer <= 0.0f && punchTimer >= -.2f)
         {
             target = fist.GetIsHitting().gameObject;
+			/*fist.GetIsHitting().ClosestPointOnBounds(transform.position)*/
+			Instantiate(hitEffect, new Vector3(target.transform.position.x, target.transform.position.y + 1f, target.transform.position.z), Quaternion.identity);
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
             ani.SetBool("Punching", true);

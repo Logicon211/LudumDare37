@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterGetsHitByObject : MonoBehaviour {
 
     MonsterHealth health;
+	public GameObject hitEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class MonsterGetsHitByObject : MonoBehaviour {
 
             if (mass*vel >= 4.0f)
             {
+				Instantiate(hitEffect, other.contacts[0].point , Quaternion.identity);
                 health.SetHealth(10);
             }
         }

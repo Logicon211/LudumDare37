@@ -1403,7 +1403,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damageSound: {fileID: 8300000, guid: 2da0f4226d614492eaf48171c98f5ccb, type: 3}
-  hitEffect: {fileID: 136674, guid: 8d3a7fbc62f810c43b8c42fdb2978ef4, type: 2}
 --- !u!114 &114710554207188298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1415,6 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a403b47d48b0886449c14a079f63c431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 180950, guid: f2a398acbf213024aa23b14c390770bf, type: 2}
 --- !u!114 &114716553521565820
 MonoBehaviour:
   m_ObjectHideFlags: 1

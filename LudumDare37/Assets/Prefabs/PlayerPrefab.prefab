@@ -2518,7 +2518,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558143975314774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01, z: 0}
+  m_LocalPosition: {x: -1.0234463, y: 1, z: -3.159812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4391581107368644}
@@ -3409,6 +3409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   damaged: {fileID: 8300000, guid: 0fcccacff396a4e2b86aaab9fc07aaec, type: 3}
+  hitEffect: {fileID: 180950, guid: f2a398acbf213024aa23b14c390770bf, type: 2}
 --- !u!114 &114443102418490034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3439,6 +3440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   redDeathOverlayObject: {fileID: 0}
+  player_hurt: {fileID: 8300000, guid: a95ead0d147d74e719f1017bd4dd580b, type: 3}
 --- !u!114 &114682656142588716
 MonoBehaviour:
   m_ObjectHideFlags: 1
