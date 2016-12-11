@@ -1125,20 +1125,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1558143975314774, guid: 44b4f4ba21cb6124f86dadad01e6e9a6, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114632353673526454, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
-        type: 2}
-      propertyPath: redDeathOverlayObject
-      value: 
-      objectReference: {fileID: 1770985455}
     - target: {fileID: 114443102418490034, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
         type: 2}
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 874076114}
+    - target: {fileID: 114632353673526454, guid: 44b4f4ba21cb6124f86dadad01e6e9a6,
+        type: 2}
+      propertyPath: redDeathOverlayObject
+      value: 
+      objectReference: {fileID: 1770985455}
+    - target: {fileID: 1558143975314774, guid: 44b4f4ba21cb6124f86dadad01e6e9a6, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44b4f4ba21cb6124f86dadad01e6e9a6, type: 2}
   m_IsPrefabParent: 0
