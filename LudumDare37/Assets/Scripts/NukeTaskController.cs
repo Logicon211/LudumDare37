@@ -32,7 +32,7 @@ public class NukeTaskController : MonoBehaviour {
 		if (numberOfNukes == 0 && !taskComplete) {
 			taskComplete = true;
 			Debug.Log ("Nuke task complete");
-			parentController.triggerNukeTaskComplete ();
+			parentController.TriggerNukeTaskComplete ();
 		}
 	}
 }
