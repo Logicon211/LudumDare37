@@ -6,17 +6,18 @@ public class PhoneTaskController : MonoBehaviour {
 
 	private TaskController parentController;
 	private bool taskComplete = false;
-	private bool answered = false;
 
 	public AudioClip phone_ringing;
 	public AudioClip conversation_clip;
 	//This should come from the object in scene
-	AudioSource audio;
+	public AudioSource phoneAudio;
+	private bool ringing;
 
 	// Use this for initialization
 	void Start () {
 		parentController = GameObject.FindObjectOfType<TaskController> ();
-		audio = GetComponent<AudioSource>();
+		ringing = false;
+		//audio = gameObject.GetComponent<AudioSource>();
 
 	}
 
@@ -29,26 +30,29 @@ public class PhoneTaskController : MonoBehaviour {
 		
 	public void StartRinging(){
 		//Start playing audio clip
-		audio.clip = phone_ringing;
-		audio.PlayDelayed(1.5f);
+
+		Debug.Log ("PHONE: start playing ringing");
+		phoneAudio.clip = phone_ringing;
+		phoneAudio.PlayDelayed(0.5f);
+		ringing = true;
 	}
 
 	public void StartCall(){
-		if (!answered) {
-			audio.Stop ();
-			answered = true;
 
-			Debug.Log ("PHONE: start playing clip");
-			//Start audio clip recording for conversation
-			audio.PlayOneShot (conversation_clip);
+		if (ringing){
+			ringing = false;
+				phoneAudio.Stop ();
 
-			//while(audiosource.isplaying()){
-			//}
-			Invoke ("PhoneTaskComplete", 10f);
+				Debug.Log ("PHONE: start playing clip");
+				//Start audio clip recording for conversation
+				phoneAudio.PlayOneShot (conversation_clip);
+
+				//while(audiosource.isplaying()){
+				//}
+				Invoke ("PhoneTaskComplete", 10f);
 		}
 	}
 	private void PhoneTaskComplete(){
-			taskComplete = true;
 			Debug.Log ("Phone task complete");
 			parentController.TriggerPhoneTaskComplete ();
 		}
