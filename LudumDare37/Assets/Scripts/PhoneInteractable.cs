@@ -18,15 +18,19 @@ public class PhoneInteractable : MonoBehaviour, IInteractable {
 	}
 
 	public void Interact() {
-		if (!clicked) {
-			Debug.Log ("Clicking on phone");
-			//myLight.color = Color.green;
-			//pulseSpeed = 6f;
-			clicked = true;
 
-			phoneOn.SetActive(false);
-			phoneoff.SetActive(true);
-			phoneTaskController.StartCall();
+		if (!clicked) {
+
+			if (phoneTaskController.CheckRinging ()) {
+				Debug.Log ("Clicking on phone");
+				//myLight.color = Color.green;
+				//pulseSpeed = 6f;
+				clicked = true;
+
+				phoneOn.SetActive (false);
+				phoneoff.SetActive (true);
+				phoneTaskController.StartCall ();
+			}
 		}
 	}
 }
