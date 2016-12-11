@@ -41,9 +41,13 @@ public class MonsterTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (health.IsDead())
+        if (health.IsDead() && !ani.GetBool("Dead"))
         {
             spawnControl.DecrementCounter();
+            ani.SetBool("Dead", true);
+        }
+        if (ani.GetBool("FullyDead"))
+        {
             Destroy(gameObject);
         }
         distance = Vector3.Distance(transform.position, plTransform.position);
@@ -59,9 +63,12 @@ public class MonsterTest : MonoBehaviour {
             walking = false;
             ani.SetBool("Attack", true);
         }
-        CheckWalking();
-        CheckAttack();
-        UpdateLookAt();
+        if (ani.GetBool("Dead") == false)
+        {
+            CheckWalking();
+            CheckAttack();
+            UpdateLookAt();
+        }
 
         if (playerHealth.getDead())
         {

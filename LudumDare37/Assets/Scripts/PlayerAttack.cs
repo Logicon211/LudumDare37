@@ -32,7 +32,6 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (fist.GetIsHitting() != null && ani.GetBool("Punching") == false)
         {
-            print("test");
             target = fist.GetIsHitting().gameObject;
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
