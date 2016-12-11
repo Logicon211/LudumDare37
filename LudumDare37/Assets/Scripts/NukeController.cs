@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NukeController : GenericPickupableObject {
+public class NukeController : GenericPickupableObject, IPickupable {
 
 	private NukeTaskController nukeTaskController;
 
 	// Use this for initialization
 	void Start () {
+		rb = GetComponent<Rigidbody> ();
 		nukeTaskController = GameObject.FindObjectOfType<NukeTaskController> ();
 	}
 	
