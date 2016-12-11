@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour {
 
+    AudioSource audio;
+
     public int health;
+    public AudioClip damageSound;
 
     bool isDead;
 
 	// Use this for initialization
 	void Start () {
+        audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame

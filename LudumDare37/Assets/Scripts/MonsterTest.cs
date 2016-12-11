@@ -14,11 +14,14 @@ public class MonsterTest : MonoBehaviour {
     GameObject player;
     SpawnController spawnControl;
     MonsterHealth health;
+    AudioSource audio;
 
     public float speed;
     public float attackRange;
-
     public int attackDamage;    // Attack damage
+    public AudioClip attack;
+    public AudioClip spawnSound;
+    public AudioClip randomSound;
 
     int counter = 0;
 
@@ -37,6 +40,9 @@ public class MonsterTest : MonoBehaviour {
         targetLookat = plTransform.position;
         spawnControl = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnController>();
         health = GetComponent<MonsterHealth>();
+        audio = GetComponent<AudioSource>();
+
+        audio.PlayOneShot(spawnSound, 0.7f);
     }
 	
 	// Update is called once per frame
@@ -61,6 +67,8 @@ public class MonsterTest : MonoBehaviour {
         {
             ani.SetBool("Walk", false);
             walking = false;
+            if (!ani.GetBool("Attack"))
+                audio.PlayOneShot(attack, 0.7f);
             ani.SetBool("Attack", true);
         }
         if (ani.GetBool("Dead") == false)

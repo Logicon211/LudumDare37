@@ -2963,11 +2963,11 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558143975314774}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2981,7 +2981,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -3073,6 +3073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
+  damaged: {fileID: 8300000, guid: 0fcccacff396a4e2b86aaab9fc07aaec, type: 3}
 --- !u!114 &114443102418490034
 MonoBehaviour:
   m_ObjectHideFlags: 1

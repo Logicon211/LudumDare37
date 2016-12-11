@@ -9,20 +9,25 @@ public class PlayerAttack : MonoBehaviour {
     FistScript fist;
     GameObject target;
     MonsterHealth monsterHealth;
+    AudioSource audio;
 
     public int attackDamage;
+    public AudioClip damaged;
 
     // Use this for initialization
     void Start () {
         ani = GetComponentInChildren<Animator>();
         los = GetComponentInChildren<PlayerLineOfSight>();
         fist = GetComponentInChildren<FistScript>();
+        audio = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButton(0) && los.IsAbleToPunch())
         {
+            if (!ani.GetBool("Punch"))
+                audio.PlayOneShot(damaged, 0.7f);
             ani.SetBool("Punch", true);
         }
         CheckAttacking();
@@ -30,12 +35,14 @@ public class PlayerAttack : MonoBehaviour {
 
     void CheckAttacking()
     {
+
         if ( ani.GetBool("Punch") && fist.GetIsHitting() != null && ani.GetBool("Punching") == false)
         {
+            ani.SetBool("Punching", true);
             target = fist.GetIsHitting().gameObject;
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
-            ani.SetBool("Punching", true);
+
         }
     }
 }
