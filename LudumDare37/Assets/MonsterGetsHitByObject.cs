@@ -8,7 +8,7 @@ public class MonsterGetsHitByObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = GetComponentInParent<MonsterHealth>();
+        health = gameObject.GetComponent<MonsterHealth>();
 	}
 	
 	// Update is called once per frame
@@ -24,8 +24,9 @@ public class MonsterGetsHitByObject : MonoBehaviour {
             float vel = other.relativeVelocity.magnitude;
             float mass = g.GetComponent<Rigidbody>().mass;
 
-            if (mass*vel >= 5.0f)
+            if (mass*vel >= 4.0f)
             {
+				print("Hit by thrown thing");
                 print(mass * vel);
                 health.SetHealth(10);
             }
