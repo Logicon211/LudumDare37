@@ -31,6 +31,7 @@ public class MonsterTest : MonoBehaviour {
     bool attackable = false;    // Attack timer, if false, attack can't go throguh
     float attackTimer = 0.7f;
     bool startTimer = false;
+    bool audioPlayed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -72,6 +73,7 @@ public class MonsterTest : MonoBehaviour {
             {
                 attackTimer = .8f;
                 startTimer = true;
+                audioPlayed = false;
              
             }
             ani.SetBool("Attack", true);
@@ -80,6 +82,11 @@ public class MonsterTest : MonoBehaviour {
         {
             if (startTimer)
                 attackTimer -= Time.deltaTime;
+            if (attackTimer <= 0.15f && !audioPlayed)
+            {
+                audioPlayed = true;
+                audio.PlayOneShot(attack, 0.7f);
+            }
             CheckWalking();
             CheckAttack();
             UpdateLookAt();
@@ -113,7 +120,7 @@ public class MonsterTest : MonoBehaviour {
             playerHealth.SetHealth(attackDamage);
             ani.SetBool("Attacking", true);
             counter++;
-            audio.PlayOneShot(attack, 0.7f);
+            
         }
 
     }

@@ -3421,7 +3421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   swing: {fileID: 8300000, guid: d580c3e2b2da4f141b113dc64e077729, type: 3}
-  swingHit: {fileID: 8300000, guid: 23b428dae3d5a5a42b1b12f0614a77e0, type: 3}
   hitEffect: {fileID: 180950, guid: f2a398acbf213024aa23b14c390770bf, type: 2}
 --- !u!114 &114443102418490034
 MonoBehaviour:
@@ -3455,7 +3454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   redDeathOverlayObject: {fileID: 0}
-  player_hurt: {fileID: 8300000, guid: 0fcccacff396a4e2b86aaab9fc07aaec, type: 3}
+  player_hurt: {fileID: 8300000, guid: 6d7b08dd3942b1f40be77a83b7931eb3, type: 3}
 --- !u!114 &114682656142588716
 MonoBehaviour:
   m_ObjectHideFlags: 1

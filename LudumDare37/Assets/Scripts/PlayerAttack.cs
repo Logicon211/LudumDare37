@@ -56,6 +56,7 @@ public class PlayerAttack : MonoBehaviour {
 			Instantiate(hitEffect, new Vector3(target.transform.position.x, target.transform.position.y + 1f, target.transform.position.z), Quaternion.identity);
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
+            //target.GetComponent<Rigidbody>().AddForce(transform.forward);
             ani.SetBool("Punching", true);
             punchTimer = .2f;
             startTimer = false;
