@@ -12220,6 +12220,14 @@ Prefab:
     - {fileID: 6400000, guid: b37698322a1ae96499c88992fd1fad48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b37698322a1ae96499c88992fd1fad48, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2139579864 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 190308, guid: ee8a60f41dce8c247815439cc7c3a510, type: 2}
+  m_PrefabInternal: {fileID: 197581186}
+--- !u!4 &2139579865 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 402180, guid: ee8a60f41dce8c247815439cc7c3a510, type: 2}
+  m_PrefabInternal: {fileID: 197581186}
 --- !u!1001 &2141017986
 Prefab:
   m_ObjectHideFlags: 0
@@ -12409,7 +12417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneTaskController: {fileID: 1395127452}
   phoneOn: {fileID: 1548966303}
-  phoneoff: {fileID: 334558287}
+  phoneoff: {fileID: 2139579864}
 --- !u!65 &2147454280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12433,7 +12441,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1548966306}
-  - {fileID: 334558290}
+  - {fileID: 2139579865}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
