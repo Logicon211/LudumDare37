@@ -15,6 +15,10 @@ public class EngineDestroyerScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Destroy(other.gameObject);
+		
+		IDestroyable destroyableObject = (IDestroyable)other.gameObject.GetComponent (typeof(IDestroyable));
+		if (destroyableObject != null) {
+			destroyableObject.Destroy ();
+		}
 	}
 }

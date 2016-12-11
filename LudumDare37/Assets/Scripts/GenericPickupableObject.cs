@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GenericPickupableObject : MonoBehaviour, IPickupable, IDestroyable {
 
-	Rigidbody rb;
+	protected Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
