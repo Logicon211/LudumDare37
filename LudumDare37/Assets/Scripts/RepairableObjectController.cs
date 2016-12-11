@@ -25,6 +25,9 @@ public class RepairableObjectController : MonoBehaviour, IRepairable {
 			Debug.Log ("Clicking on Repairable Object");
 			clicked = true;
 			repairableObjecttaskController.decrementNumberOfRepairableObjects ();
+			transform.Find ("Smoke").GetComponent<ParticleSystem> ().Stop ();
+			transform.Find ("SparksSubtle").GetComponent<ParticleSystem> ().Stop();
+
 		}
 	}
 }
