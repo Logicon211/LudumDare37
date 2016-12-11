@@ -35,7 +35,8 @@ public class SceneFadeInOut : MonoBehaviour
 		}
 
 		else if(sceneEnding){
-			EndScene();
+			StartCoroutine("EndScene");
+			//EndScene();
 		}
 	}
 	
@@ -72,14 +73,29 @@ public class SceneFadeInOut : MonoBehaviour
 	}
 	
 	
-	public void EndScene ()
-	{
+//	public void EndScene ()
+//	{
+//		// Make sure the texture is enabled.
+//		GetComponent<GUITexture>().enabled = true;
+//		
+//		// Start fading towards black.
+//		FadeToBlack();
+//		
+//		// If the screen is almost black...
+//		if(GetComponent<GUITexture>().color.a >= 0.95f)
+//			// ... reload the level.
+//			Application.LoadLevel(sceneToLoad);
+//	}
+
+	IEnumerator EndScene() {			
+		yield return new  WaitForSeconds(3);  // or however long you want it to wait
+
 		// Make sure the texture is enabled.
 		GetComponent<GUITexture>().enabled = true;
-		
+
 		// Start fading towards black.
 		FadeToBlack();
-		
+
 		// If the screen is almost black...
 		if(GetComponent<GUITexture>().color.a >= 0.95f)
 			// ... reload the level.

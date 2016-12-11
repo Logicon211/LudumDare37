@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
+using UnityStandardAssets.CrossPlatformInput;
 using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -10,6 +11,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -41,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+		private PlayerHealth playerHealth;
 
         // Use this for initialization
         private void Start()
@@ -55,32 +58,32 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+			playerHealth = GetComponent<PlayerHealth>();
         }
 
 
         // Update is called once per frame
         private void Update()
         {
-            RotateView();
-            // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
+			if (!playerHealth.getDead ()) {
+				RotateView ();
+				// the jump state needs to read here to make sure it is not missed
+				if (!m_Jump) {
+					m_Jump = CrossPlatformInputManager.GetButtonDown ("Jump");
+				}
 
-            if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
-            {
-                StartCoroutine(m_JumpBob.DoBobCycle());
-                PlayLandingSound();
-                m_MoveDir.y = 0f;
-                m_Jumping = false;
-            }
-            if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
-            {
-                m_MoveDir.y = 0f;
-            }
+				if (!m_PreviouslyGrounded && m_CharacterController.isGrounded) {
+					StartCoroutine (m_JumpBob.DoBobCycle ());
+					PlayLandingSound ();
+					m_MoveDir.y = 0f;
+					m_Jumping = false;
+				}
+				if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded) {
+					m_MoveDir.y = 0f;
+				}
 
-            m_PreviouslyGrounded = m_CharacterController.isGrounded;
+				m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			}
         }
 
 
@@ -94,43 +97,41 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            float speed;
-            GetInput(out speed);
-            // always move along the camera forward as it is the direction that it being aimed at
-            Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
+			if (!playerHealth.getDead ()) {
+				float speed;
+				GetInput (out speed);
+				// always move along the camera forward as it is the direction that it being aimed at
+				Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
-            // get a normal for the surface that is being touched to move along it
-            RaycastHit hitInfo;
-            Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
-                               m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
-            desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
+				// get a normal for the surface that is being touched to move along it
+				RaycastHit hitInfo;
+				Physics.SphereCast (transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
+					m_CharacterController.height / 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+				desiredMove = Vector3.ProjectOnPlane (desiredMove, hitInfo.normal).normalized;
 
-            m_MoveDir.x = desiredMove.x*speed;
-            m_MoveDir.z = desiredMove.z*speed;
+				m_MoveDir.x = desiredMove.x * speed;
+				m_MoveDir.z = desiredMove.z * speed;
 
 
-            if (m_CharacterController.isGrounded)
-            {
-                m_MoveDir.y = -m_StickToGroundForce;
+				if (m_CharacterController.isGrounded) {
+					m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
-                {
-                    m_MoveDir.y = m_JumpSpeed;
-                    PlayJumpSound();
-                    m_Jump = false;
-                    m_Jumping = true;
-                }
-            }
-            else
-            {
-                m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-            }
-            m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+					if (m_Jump) {
+						m_MoveDir.y = m_JumpSpeed;
+						PlayJumpSound ();
+						m_Jump = false;
+						m_Jumping = true;
+					}
+				} else {
+					m_MoveDir += Physics.gravity * m_GravityMultiplier * Time.fixedDeltaTime;
+				}
+				m_CollisionFlags = m_CharacterController.Move (m_MoveDir * Time.fixedDeltaTime);
 
-            ProgressStepCycle(speed);
-            UpdateCameraPosition(speed);
+				ProgressStepCycle (speed);
+				UpdateCameraPosition (speed);
 
-            m_MouseLook.UpdateCursorLock();
+				m_MouseLook.UpdateCursorLock ();
+			}
         }
 
 
@@ -162,21 +163,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayFootStepAudio()
         {
-<<<<<<< HEAD
 //            if (!m_CharacterController.isGrounded)
 //            {
 //                return;
 //            }
 //            // pick & play a random footstep sound from the array,
 //            // excluding sound at index 0
-=======
-            if (!m_CharacterController.isGrounded)
-            {
-                return;
-            }
-            // pick & play a random footstep sound from the array,
-            // excluding sound at index 0
->>>>>>> Importing a ton of assets
 //            int n = Random.Range(1, m_FootstepSounds.Length);
 //            m_AudioSource.clip = m_FootstepSounds[n];
 //            m_AudioSource.PlayOneShot(m_AudioSource.clip);
