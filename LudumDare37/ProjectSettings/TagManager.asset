@@ -16,6 +16,7 @@ TagManager:
   - ControlPanel
   - Nuke
   - Light
+  - Wrench
   layers:
   - Default
   - TransparentFX

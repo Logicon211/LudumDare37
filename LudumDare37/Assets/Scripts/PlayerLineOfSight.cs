@@ -11,6 +11,9 @@ public class PlayerLineOfSight : MonoBehaviour {
 	GameObject objectInHand;
 	public LayerMask colliderMask;
 	public Text interactionText;
+	private GameObject equipedItem;
+	public GameObject equipableWrench;
+	public GameObject equipableDumbell;
 
 	public float throwForce = 5;
 
@@ -18,6 +21,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 	void Start () {
 		isObjectInRange = false;
 		interactionText.text = "";
+		equipableWrench.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -26,19 +30,28 @@ public class PlayerLineOfSight : MonoBehaviour {
 
 		IPickupable pickupableObject = null;
 		IInteractable interactableObject = null;
+		IEquipable equipableObject = null;
 
 		if (Physics.Raycast (this.transform.position, this.transform.forward, out objectInRange, interactionDistance, colliderMask)) {
 //			Debug.Log ("Object in range: " + objectInRange.collider.name);
 
 			pickupableObject = (IPickupable)objectInRange.collider.gameObject.GetComponent (typeof(IPickupable));
 			interactableObject = (IInteractable)objectInRange.collider.gameObject.GetComponent (typeof(IInteractable));
-
+			equipableObject = (IEquipable)objectInRange.collider.gameObject.GetComponent (typeof(IEquipable));
 
 			isObjectInRange = true;
 			if (Input.GetKeyDown(KeyCode.E)) {
 				if (objectInHand == null) {
 					if (interactableObject != null) {
 						interactableObject.Interact ();
+					} 
+				}
+
+				if (equipedItem == null && equipableObject != null) {
+					if (equipableObject is WrenchController) {
+						equipedItem = equipableWrench;
+						equipableWrench.SetActive (true);
+						objectInRange.collider.gameObject.SetActive(false);
 					}
 				}
 			}
@@ -71,7 +84,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 			} 
 		}
 
-		updateInteractionText (interactableObject, pickupableObject);
+		updateInteractionText (interactableObject, pickupableObject, equipableObject);
 	}
 
     public bool IsAbleToPunch()
@@ -81,12 +94,14 @@ public class PlayerLineOfSight : MonoBehaviour {
         return false;
     }
 
-	private void updateInteractionText(IInteractable interactable, IPickupable pickupable) {
+	private void updateInteractionText(IInteractable interactable, IPickupable pickupable, IEquipable equipable) {
 		
 		if (interactable != null && objectInHand == null) {
 			interactionText.text = "[E] to interact";
 		} else if (pickupable != null && objectInHand == null) {
 			interactionText.text = "[E] to pickup";
+		} else if (equipable != null && equipedItem == null && objectInHand == null) {
+			interactionText.text = "[E] to equip";
 		} else { 
 			interactionText.text = "";
 		}
