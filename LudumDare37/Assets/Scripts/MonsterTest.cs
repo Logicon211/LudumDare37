@@ -28,6 +28,8 @@ public class MonsterTest : MonoBehaviour {
     float distance;
     bool walking = false;
     bool attackable = false;    // Attack timer, if false, attack can't go throguh
+    float attackTimer;
+    bool startTimer = false;
 
 	// Use this for initialization
 	void Start () {
@@ -68,11 +70,17 @@ public class MonsterTest : MonoBehaviour {
             ani.SetBool("Walk", false);
             walking = false;
             if (!ani.GetBool("Attack"))
+            {
+                attackTimer = 0.4f;
+                startTimer = true;
                 audio.PlayOneShot(attack, 0.7f);
+            }
             ani.SetBool("Attack", true);
         }
         if (ani.GetBool("Dead") == false)
         {
+            if (startTimer)
+                attackTimer -= Time.deltaTime;
             CheckWalking();
             CheckAttack();
             UpdateLookAt();
@@ -98,12 +106,12 @@ public class MonsterTest : MonoBehaviour {
     // their health based on the monsters attack
     void CheckAttack()
     {
-        if (sword.GetIsHitting() && ani.GetBool("Attacking") == false && !health.IsDead())
+        if (sword.GetIsHitting() && ani.GetBool("Attacking") == false && !health.IsDead() && attackTimer <= 0.0f && attackTimer >= -0.5f)
         {
+            print("swing went through");
             playerHealth.SetHealth(attackDamage);
             ani.SetBool("Attacking", true);
             counter++;
-
         }
     }
 

@@ -8,7 +8,6 @@ public class MonsterHealth : MonoBehaviour {
 
     public int health;
     public AudioClip damageSound;
-
 	public GameObject hitEffect;
 
     bool isDead;
