@@ -133,3 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606b7d1303f0280408a16096b6ee4c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskListTitle: {fileID: 114431607785603990, guid: 7346ea7eff1e9af46b3682d8f94a48c7,
+    type: 2}
+  controlPanelTaskText: {fileID: 114730028920030720, guid: 7346ea7eff1e9af46b3682d8f94a48c7,
+    type: 2}
+  nukeTaskText: {fileID: 114687360903953684, guid: 7346ea7eff1e9af46b3682d8f94a48c7,
+    type: 2}
