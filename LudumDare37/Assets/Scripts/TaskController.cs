@@ -16,6 +16,7 @@ public class TaskController : MonoBehaviour {
 	public Text controlPanelTaskText;
 	public Text nukeTaskText;
 	public Text repairableObjectTaskText;
+	public Text phoneTaskText;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class TaskController : MonoBehaviour {
 		controlPanelTaskText.text = "- Activate all control panels";
 		nukeTaskText.text = "- Load all nukes into engine";
 		repairableObjectTaskText.text = "- Repair all smoking objects";
+		phoneTaskText.text = "- Answer the ringing phone";
 	}
 	
 	// Update is called once per frame
@@ -70,6 +72,8 @@ public class TaskController : MonoBehaviour {
 
 	public void TriggerPhoneTaskComplete(){
 		phoneTaskComplete = true;
+		phoneTaskText.supportRichText = true;
+		phoneTaskText.text = "<color=#292929ff>- Answer the ringing phone</color>";
 		CheckVictoryCondition ();
 		//other shit
 	}

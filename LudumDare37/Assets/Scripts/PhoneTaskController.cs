@@ -37,6 +37,10 @@ public class PhoneTaskController : MonoBehaviour {
 		ringing = true;
 	}
 
+	public bool CheckRinging(){
+		return ringing;
+	}
+
 	public void StartCall(){
 
 		if (ringing){
