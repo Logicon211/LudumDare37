@@ -113,7 +113,8 @@ public class IntroSpriteFlow : MonoBehaviour
 		// If the screen is almost black...
 		if(GetComponent<GUITexture>().color.a >= 0.95f) {
 			// ... reload the level.
-			Application.LoadLevel(levelToLoad);
+			//Application.LoadLevel(levelToLoad);
+			LoadingScreenManager.LoadScene(1);
 		}
 	}
 }
