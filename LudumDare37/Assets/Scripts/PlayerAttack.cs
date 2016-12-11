@@ -12,7 +12,8 @@ public class PlayerAttack : MonoBehaviour {
     AudioSource audio;
 
     public int attackDamage;
-    public AudioClip damaged;
+    public AudioClip swing;
+    public AudioClip swingHit;
 
 	public GameObject hitEffect;
 
@@ -34,7 +35,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             if (!ani.GetBool("Punch"))
             {
-                audio.PlayOneShot(damaged, 0.7f);
+                audio.PlayOneShot(swing, 0.7f);
                 startTimer = true;
                 punchTimer = .2f;
             }
@@ -55,6 +56,7 @@ public class PlayerAttack : MonoBehaviour {
 			Instantiate(hitEffect, new Vector3(target.transform.position.x, target.transform.position.y + 1f, target.transform.position.z), Quaternion.identity);
             monsterHealth = target.GetComponent<MonsterHealth>();
             monsterHealth.SetHealth(attackDamage);
+            audio.PlayOneShot(swingHit, 0.7f);
             ani.SetBool("Punching", true);
             punchTimer = .2f;
             startTimer = false;

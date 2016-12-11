@@ -44,8 +44,6 @@ public class MonsterTest : MonoBehaviour {
         spawnControl = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnController>();
         health = GetComponent<MonsterHealth>();
         audio = GetComponent<AudioSource>();
-
-        audio.PlayOneShot(spawnSound, 0.7f);
     }
 	
 	// Update is called once per frame
@@ -74,7 +72,7 @@ public class MonsterTest : MonoBehaviour {
             {
                 attackTimer = .8f;
                 startTimer = true;
-                audio.PlayOneShot(attack, 0.7f);
+             
             }
             ani.SetBool("Attack", true);
         }
@@ -112,10 +110,10 @@ public class MonsterTest : MonoBehaviour {
 
         if (distance <= (attackRange) && ani.GetBool("Attacking") == false && !health.IsDead() && attackTimer <= 0.0f && attackTimer >= -0.5f)
         {
-            print("swing went through");
             playerHealth.SetHealth(attackDamage);
             ani.SetBool("Attacking", true);
             counter++;
+            audio.PlayOneShot(attack, 0.7f);
         }
 
     }

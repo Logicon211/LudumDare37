@@ -2519,7 +2519,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558143975314774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0234463, y: 1, z: -3.159812}
+  m_LocalPosition: {x: 7.218, y: 1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4391581107368644}
@@ -3302,7 +3302,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 90a8a459077539942a20fe962916a425, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3420,7 +3420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  damaged: {fileID: 8300000, guid: 0fcccacff396a4e2b86aaab9fc07aaec, type: 3}
+  swing: {fileID: 8300000, guid: d580c3e2b2da4f141b113dc64e077729, type: 3}
+  swingHit: {fileID: 8300000, guid: 23b428dae3d5a5a42b1b12f0614a77e0, type: 3}
   hitEffect: {fileID: 180950, guid: f2a398acbf213024aa23b14c390770bf, type: 2}
 --- !u!114 &114443102418490034
 MonoBehaviour:
@@ -3454,7 +3455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   redDeathOverlayObject: {fileID: 0}
-  player_hurt: {fileID: 8300000, guid: a95ead0d147d74e719f1017bd4dd580b, type: 3}
+  player_hurt: {fileID: 8300000, guid: 0fcccacff396a4e2b86aaab9fc07aaec, type: 3}
 --- !u!114 &114682656142588716
 MonoBehaviour:
   m_ObjectHideFlags: 1

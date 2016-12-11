@@ -1302,11 +1302,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 90a8a459077539942a20fe962916a425, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  damageSound: {fileID: 8300000, guid: 2da0f4226d614492eaf48171c98f5ccb, type: 3}
+  damageSound: {fileID: 8300000, guid: a512c5b4e2eef9442a3d7202c9d12d2f, type: 3}
 --- !u!114 &114710554207188298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   attackRange: 3
   attackDamage: 10
   viewAngle: 90
-  attack: {fileID: 8300000, guid: 17a64018f41d043169872a142113c3dc, type: 3}
+  attack: {fileID: 8300000, guid: 45c8ac19406831f4f92e2b0a8f8713e9, type: 3}
   spawnSound: {fileID: 8300000, guid: 0dac35a0466ff4cb9a3d2c006dc956af, type: 3}
   randomSound: {fileID: 8300000, guid: 4c83c48917ba64a0596defd48992603c, type: 3}
 --- !u!114 &114881667035090650
