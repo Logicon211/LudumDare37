@@ -7,6 +7,7 @@ public class SpawnController : MonoBehaviour {
     public int maxEnemies;
     public float spawnTime;
     public GameObject skeleton;
+    public float spawnTimeMultiplier;
 
     float elapsedTime = 0.0f;
     int spawnPoint = 0;
@@ -42,5 +43,6 @@ public class SpawnController : MonoBehaviour {
         enemyCount--;
         if (enemyCount < 0)
             enemyCount = 0;
+        spawnTime *= spawnTimeMultiplier;
     }
 }

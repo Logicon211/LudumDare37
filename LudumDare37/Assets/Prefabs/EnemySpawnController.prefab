@@ -165,6 +165,7 @@ MonoBehaviour:
   maxEnemies: 10
   spawnTime: 10
   skeleton: {fileID: 1997293038714614, guid: 779472641e53f4f4ea77872a5dc5eb5c, type: 2}
+  spawnTimeMultiplier: 0.95
 --- !u!135 &135175198985325272
 SphereCollider:
   m_ObjectHideFlags: 1
