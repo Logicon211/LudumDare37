@@ -15,6 +15,7 @@ TagManager:
   - Spawner
   - ControlPanel
   - Nuke
+  - Light
   layers:
   - Default
   - TransparentFX
