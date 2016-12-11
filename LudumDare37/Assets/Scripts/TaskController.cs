@@ -5,6 +5,7 @@ using UnityEngine;
 public class TaskController : MonoBehaviour {
 
 	private bool controlPanelTaskComplete = false;
+	private bool nukeTaskComplete = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,15 @@ public class TaskController : MonoBehaviour {
 
 	public void triggerControlPanelTaskComplete() {
 		controlPanelTaskComplete = true;
+		//Update UI;
+	}
+
+	public bool getNukeTaskComplete () {
+		return controlPanelTaskComplete;
+	}
+
+	public void triggerNukeTaskComplete() {
+		nukeTaskComplete = true;
 		//Update UI;
 	}
 }

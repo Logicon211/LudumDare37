@@ -8,6 +8,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 	RaycastHit objectInRange;
 	bool isObjectInRange;
 	GameObject objectInHand;
+	public LayerMask colliderMask;
 
 	public float throwForce = 5;
 
@@ -20,7 +21,7 @@ public class PlayerLineOfSight : MonoBehaviour {
 	void Update () {
 		Debug.DrawRay (this.transform.position, this.transform.forward * interactionDistance, Color.magenta);
 
-		if (Physics.Raycast (this.transform.position, this.transform.forward, out objectInRange, interactionDistance)) {
+		if (Physics.Raycast (this.transform.position, this.transform.forward, out objectInRange, interactionDistance, colliderMask)) {
 //			Debug.Log ("Object in range: " + objectInRange.collider.name);
 			isObjectInRange = true;
 			if (Input.GetMouseButtonDown (0)) {

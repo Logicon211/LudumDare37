@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericPickupableObject : MonoBehaviour, IPickupable {
+public class GenericPickupableObject : MonoBehaviour, IPickupable, IDestroyable {
 
 	Rigidbody rb;
 
@@ -39,5 +39,9 @@ public class GenericPickupableObject : MonoBehaviour, IPickupable {
 	public void Throw (GameObject parent, Vector3 throwDirection, float throwForce) {
 		Release (parent);
 		rb.AddForce (throwDirection * throwForce, ForceMode.Impulse);
+	}
+
+	public virtual void Destroy () {
+		Destroy (this.gameObject);
 	}
 }

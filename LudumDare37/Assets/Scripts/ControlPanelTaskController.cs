@@ -32,7 +32,7 @@ public class ControlPanelTaskController : MonoBehaviour {
 		if (numberOfControlPanels == 0 && !taskComplete) {
 			taskComplete = true;
 			Debug.Log ("Task complete");
-			// Trigger victory in parent
+			parentController.triggerControlPanelTaskComplete ();
 		}
 	}
 }
