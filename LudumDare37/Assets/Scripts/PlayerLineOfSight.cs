@@ -117,7 +117,11 @@ public class PlayerLineOfSight : MonoBehaviour {
 		} else if (equipable != null && equipedItem == null && objectInHand == null) {
 			interactionText.text = "[E] to equip";
 		} else if (repairable != null && equipedItem != null && equipedItem.CompareTag("Wrench")) {
-			interactionText.text = "[Mouse0] to repair";
+			if (repairable.getRepaired ()) {
+				interactionText.text = "Target is Repaired";
+			} else {
+				interactionText.text = "[Left Click] to repair";
+			}
 		} else { 
 			interactionText.text = "";
 		}

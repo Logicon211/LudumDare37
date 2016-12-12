@@ -16,6 +16,10 @@ public class EngineDestroyerScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+
+		if (other.CompareTag ("Player")) {
+			other.gameObject.GetComponent<PlayerHealth> ().SetHealth (100);
+		}
 		
 		IDestroyable destroyableObject = (IDestroyable)other.gameObject.GetComponent (typeof(IDestroyable));
 		if (destroyableObject != null) {

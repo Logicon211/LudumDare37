@@ -8,7 +8,7 @@ public class SceneFadeInOut : MonoBehaviour
 	
 	private bool sceneStarting = true;      // Whether or not the scene is still fading in.
 	private bool sceneEnding = false;
-	public string sceneToLoad;
+	public int sceneToLoadIndex;
 
 	void Awake ()
 	{
@@ -99,6 +99,7 @@ public class SceneFadeInOut : MonoBehaviour
 		// If the screen is almost black...
 		if(GetComponent<GUITexture>().color.a >= 0.95f)
 			// ... reload the level.
-			Application.LoadLevel(sceneToLoad);
+			//Application.LoadLevel(sceneToLoad);
+			LoadingScreenManager.LoadScene(sceneToLoadIndex);
 	}
 }

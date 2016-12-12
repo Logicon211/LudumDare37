@@ -34,4 +34,8 @@ public class RepairableObjectController : MonoBehaviour, IRepairable {
 
 		}
 	}
+
+	public bool getRepaired() {
+		return clicked;
+	}
 }

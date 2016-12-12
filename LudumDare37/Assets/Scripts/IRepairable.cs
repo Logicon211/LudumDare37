@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface IRepairable {
 	void Repair ();
+	bool getRepaired();
 }

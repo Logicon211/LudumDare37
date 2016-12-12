@@ -118,7 +118,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 43371aeea59743445988388a21d716ef, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.44
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -287,6 +287,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1213664579
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.9581738
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -7.5795364
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.3930054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758907218183876, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 45b85a383e97c734fa42b98664f5964c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1571593372
 Prefab:
   m_ObjectHideFlags: 0
