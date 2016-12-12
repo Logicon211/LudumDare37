@@ -8,8 +8,16 @@ public class RepairableObjectTaskController : MonoBehaviour {
 	private int numberOfRepairableObjects;
 	private bool taskComplete = false;
 
+	private GameObject fixInstructions;
+	private GameObject fixInstructionsDone;
+
 	// Use this for initialization
 	void Start () {
+		fixInstructions = transform.FindChild ("FixInstructions").gameObject;
+		fixInstructionsDone = transform.FindChild ("FixInstructionsDone").gameObject;
+
+		fixInstructionsDone.SetActive (false);
+
 		numberOfRepairableObjects = GameObject.FindGameObjectsWithTag ("RepairableObject").Length;
 		parentController = GameObject.FindObjectOfType<TaskController> ();
 		checkTaskComplete ();
@@ -33,6 +41,9 @@ public class RepairableObjectTaskController : MonoBehaviour {
 			taskComplete = true;
 			Debug.Log ("Repairable Object task complete");
 			parentController.TriggerRepairableObjectTaskComplete ();
+
+			fixInstructionsDone.SetActive (true);
+			fixInstructions.SetActive (false);
 		}
 	}
 }

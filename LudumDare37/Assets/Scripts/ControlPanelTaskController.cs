@@ -8,8 +8,16 @@ public class ControlPanelTaskController : MonoBehaviour {
 	private int numberOfControlPanels;
 	private bool taskComplete = false;
 
+	private GameObject consoleInstructions;
+	private GameObject consoleInstructionsDone;
+
 	// Use this for initialization
 	void Start () {
+		consoleInstructions = transform.FindChild ("ConsoleInstructions").gameObject;
+		consoleInstructionsDone = transform.FindChild ("ConsoleInstructionsDone").gameObject;
+
+		consoleInstructionsDone.SetActive (false);
+
 		numberOfControlPanels = GameObject.FindGameObjectsWithTag ("ControlPanel").Length;
 		parentController = GameObject.FindObjectOfType<TaskController> ();
 		checkTaskComplete ();
@@ -33,6 +41,9 @@ public class ControlPanelTaskController : MonoBehaviour {
 			taskComplete = true;
 			Debug.Log ("Control Panel task complete");
 			parentController.TriggerControlPanelTaskComplete ();
+
+			consoleInstructionsDone.SetActive (true);
+			consoleInstructions.SetActive (false);
 		}
 	}
 }

@@ -13,8 +13,16 @@ public class PhoneTaskController : MonoBehaviour {
 	public AudioSource phoneAudio;
 	private bool ringing;
 
+	private GameObject phoneInstructions;
+	private GameObject phoneInstructionsDone;
+
 	// Use this for initialization
 	void Start () {
+		phoneInstructions = transform.FindChild ("PhoneInstructions").gameObject;
+		phoneInstructionsDone = transform.FindChild ("PhoneInstructionsDone").gameObject;
+
+		phoneInstructionsDone.SetActive (false);
+
 		parentController = GameObject.FindObjectOfType<TaskController> ();
 		ringing = false;
 		//audio = gameObject.GetComponent<AudioSource>();
@@ -56,11 +64,15 @@ public class PhoneTaskController : MonoBehaviour {
 				Invoke ("PhoneTaskComplete", 10f);
 		}
 	}
-	private void PhoneTaskComplete(){
-			Debug.Log ("Phone task complete");
-			parentController.TriggerPhoneTaskComplete ();
-		}
-		//}
-	//}
+
+	private void PhoneTaskComplete() {
+		
+		Debug.Log ("Phone task complete");
+		parentController.TriggerPhoneTaskComplete ();
+
+		phoneInstructionsDone.SetActive (true);
+		phoneInstructions.SetActive (false);
+
+	}
 		
 }
