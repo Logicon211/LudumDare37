@@ -9,8 +9,14 @@ public class LightSwitchController : MonoBehaviour, IInteractable {
 	private GameObject[] lights;
 	private GameObject phoneInteractable;
 
+	public GameObject lightInstructions;
+	public GameObject lightInstructionsDone;
+
 	// Use this for initialization
 	void Start () {
+
+		lightInstructionsDone.SetActive (false);
+
 		parentController = GameObject.FindObjectOfType<TaskController> ();
 		lights = GameObject.FindGameObjectsWithTag ("Light");
 		phoneInteractable = GameObject.FindGameObjectWithTag ("phone");
@@ -39,6 +45,9 @@ public class LightSwitchController : MonoBehaviour, IInteractable {
 			PhoneTaskController PTC = FindObjectOfType<PhoneTaskController>();
 			PTC.StartRinging ();
 			parentController.TriggerLightSwitchTaskComplete ();
+
+			lightInstructionsDone.SetActive (true);
+			lightInstructions.SetActive (false);
 		}
 	}
 }

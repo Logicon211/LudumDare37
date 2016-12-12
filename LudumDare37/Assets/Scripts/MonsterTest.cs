@@ -51,6 +51,8 @@ public class MonsterTest : MonoBehaviour {
 	void Update () {
         if (health.IsDead() && !ani.GetBool("Dead"))
         {
+			GetComponent<Rigidbody> ().detectCollisions = false;
+			GetComponent<Rigidbody> ().isKinematic = true;
             spawnControl.DecrementCounter();
             ani.SetBool("Dead", true);
         }
