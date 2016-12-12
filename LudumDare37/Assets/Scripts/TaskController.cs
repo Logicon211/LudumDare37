@@ -11,6 +11,8 @@ public class TaskController : MonoBehaviour {
 	private bool phoneTaskComplete = false;
 	private bool repairableObjectTaskComplete = false;
 
+	private GameObject endGameCollider;
+
 	public Text taskListTitle;
 	public Text lightSwitchTaskText;
 	public Text controlPanelTaskText;
@@ -28,6 +30,7 @@ public class TaskController : MonoBehaviour {
 		nukeTaskText.text = "- Load all nukes into engine";
 		repairableObjectTaskText.text = "- Repair all smoking objects";
 		phoneTaskText.text = "- Answer the ringing phone";
+		endGameCollider = transform.FindChild ("ExitDoor").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -97,6 +100,7 @@ public class TaskController : MonoBehaviour {
 			GameObject thedoor = GameObject.FindWithTag("SF_Door");
 			thedoor.GetComponent<Animation>().Play("open");
 			endGameLight.enabled = true;
+			endGameCollider.GetComponent<BoxCollider> ().enabled = true;
 		}
 
 	}
