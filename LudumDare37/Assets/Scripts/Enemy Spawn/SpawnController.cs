@@ -44,5 +44,9 @@ public class SpawnController : MonoBehaviour {
         if (enemyCount < 0)
             enemyCount = 0;
         spawnTime *= spawnTimeMultiplier;
+
+		if (spawnTime < 1) {
+			spawnTime = 1;
+		}
     }
 }

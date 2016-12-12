@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour {
 		Debug.Log("setting health to" + health);
 		Debug.Log("setting temp to" + temp);
 
-		audio.PlayOneShot(player_hurt, 0.7f);
+		audio.PlayOneShot(player_hurt, 1f);
     }
 
     public int GetHealth()

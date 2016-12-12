@@ -18,6 +18,8 @@ public class TaskController : MonoBehaviour {
 	public Text repairableObjectTaskText;
 	public Text phoneTaskText;
 
+	public Light endGameLight;
+
 	// Use this for initialization
 	void Start () {
 		taskListTitle.text = "Todo:";
@@ -91,7 +93,11 @@ public class TaskController : MonoBehaviour {
 	public void CheckVictoryCondition() {
 		
 		if (lightSwitchTaskComplete && controlPanelTaskComplete && nukeTaskComplete && phoneTaskComplete && repairableObjectTaskComplete) {
-			//Change scene or something?
+
+			GameObject thedoor = GameObject.FindWithTag("SF_Door");
+			thedoor.GetComponent<Animation>().Play("open");
+			endGameLight.enabled = true;
 		}
+
 	}
 }
