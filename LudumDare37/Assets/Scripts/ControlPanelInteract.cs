@@ -13,7 +13,6 @@ public class ControlPanelInteract : MonoBehaviour, IInteractable {
 	private bool clicked = false;
 	public ControlPanelTaskController controlPanelTaskController;
 
-
 	void Start(){
 		myLight = transform.FindChild("PointLight").GetComponent<Light>();
 		controlPanelTaskController = GameObject.FindObjectOfType<ControlPanelTaskController> ();
@@ -37,6 +36,8 @@ public class ControlPanelInteract : MonoBehaviour, IInteractable {
 			pulseSpeed = 6f;
 			clicked = true;
 			controlPanelTaskController.decrementNumberOfPanels ();
+
+
 		}
 	}
 }

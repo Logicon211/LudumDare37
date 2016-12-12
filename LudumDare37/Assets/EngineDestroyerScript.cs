@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EngineDestroyerScript : MonoBehaviour {
 
+	public AudioSource FirePoof;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,6 +20,7 @@ public class EngineDestroyerScript : MonoBehaviour {
 		IDestroyable destroyableObject = (IDestroyable)other.gameObject.GetComponent (typeof(IDestroyable));
 		if (destroyableObject != null) {
 			destroyableObject.Destroy ();
+			FirePoof.Play();
 		}
 	}
 }

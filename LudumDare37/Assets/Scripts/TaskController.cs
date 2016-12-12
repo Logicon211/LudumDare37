@@ -25,15 +25,15 @@ public class TaskController : MonoBehaviour {
 	//Audio clips
 	public AudioSource KillbaneSpeech;
 
+	public AudioSource sirenSource;
 
-	AudioClip Phone;
-	AudioClip Wrench;
-	AudioClip Systems;
-	AudioClip TimeToGo;
-	AudioClip FixTheShip;
-	AudioClip ImOnIt;
-	AudioClip Lights;
-	AudioClip Engine;
+	public AudioClip Wrench;
+	public AudioClip Systems;
+	public AudioClip TimeToGo;
+	public AudioClip FixTheShip;
+	public AudioClip ImOnIt;
+	public AudioClip Lights;
+	public AudioClip Engine;
 
 	//AudioClip Phone = Resources.Load("Sounds/ShadowGovernment")as AudioClip;
 
@@ -53,16 +53,7 @@ public class TaskController : MonoBehaviour {
 		endGameCollider = transform.FindChild ("ExitDoor").gameObject;
 		//Audio files
 
-		Phone = Resources.Load("Sounds/ShadowGovernment")as AudioClip;
-		Wrench = Resources.Load("Sounds/ShouldBeFixedNow")as AudioClip;
-		Systems = Resources.Load("Sounds/SystemsShouldBeRestartedNow")as AudioClip;
-		TimeToGo = Resources.Load("Sounds/TimeToGetOutOfHere")as AudioClip;
-		FixTheShip = Resources.Load("Sounds/ThatsBetterNowToFixTheShip")as AudioClip;
-		ImOnIt = Resources.Load("Sounds/ImOnItCommanderPresident")as AudioClip;
-		Lights = Resources.Load("Sounds/GottaTurnOnTheLights")as AudioClip;
-		Engine = Resources.Load("Sounds/EngineShouldHaveEnoughPowerNow")as AudioClip;
-
-		Invoke ("StartingWords", 2f);
+		Invoke ("StartingWords", 1.25f);
 
 	}
 	
@@ -72,7 +63,7 @@ public class TaskController : MonoBehaviour {
 	}
 
 	private void StartingWords(){
-
+		Debug.Log ("STARTINGWORDS");
 		KillbaneSpeech.PlayOneShot (Lights);
 	}
 
@@ -111,6 +102,7 @@ public class TaskController : MonoBehaviour {
 		lightSwitchTaskText.text = "<color=#292929ff>- Hit the lights</color>";
 		CheckVictoryCondition ();
 		KillbaneSpeech.PlayOneShot (FixTheShip);
+		sirenSource.Stop ();
 	}
 
 	public bool GetPhoneTaskComplete(){
@@ -145,8 +137,13 @@ public class TaskController : MonoBehaviour {
 			thedoor.GetComponent<Animation>().Play("open");
 			endGameLight.enabled = true;
 			endGameCollider.GetComponent<BoxCollider> ().enabled = true;
-			KillbaneSpeech.PlayOneShot (TimeToGo);
-		}
 
+			Invoke ("EndingWords", 3f);
+		}
+	}
+
+	public void EndingWords(){
+
+		KillbaneSpeech.PlayOneShot (TimeToGo);
 	}
 }

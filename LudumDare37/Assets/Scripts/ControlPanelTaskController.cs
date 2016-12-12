@@ -10,6 +10,7 @@ public class ControlPanelTaskController : MonoBehaviour {
 
 	private GameObject consoleInstructions;
 	private GameObject consoleInstructionsDone;
+	public AudioSource controlPanelAudio;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,7 @@ public class ControlPanelTaskController : MonoBehaviour {
 	public void decrementNumberOfPanels () {
 		if (numberOfControlPanels != 0) {
 			numberOfControlPanels--;
+			controlPanelAudio.Play ();
 			Debug.Log ("Decremented, new number of panels: " + numberOfControlPanels);
 			checkTaskComplete ();
 		}

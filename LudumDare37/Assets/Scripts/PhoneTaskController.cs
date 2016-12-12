@@ -61,7 +61,7 @@ public class PhoneTaskController : MonoBehaviour {
 
 				//while(audiosource.isplaying()){
 				//}
-				Invoke ("PhoneTaskComplete", 10f);
+				Invoke ("PhoneTaskComplete", 5f);
 		}
 	}
 

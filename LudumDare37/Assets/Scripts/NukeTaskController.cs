@@ -11,6 +11,8 @@ public class NukeTaskController : MonoBehaviour {
 	private GameObject nukeInstructions;
 	private GameObject nukeInstructionsDone;
 
+	public AudioSource nukeTaskAudio;
+
 	// Use this for initialization
 	void Start () {
 		nukeInstructions = transform.FindChild ("NukeEngineInstructions").gameObject;
@@ -29,8 +31,16 @@ public class NukeTaskController : MonoBehaviour {
 	}
 
 	public void decrementNumberOfNukes () {
+
+		float volumeIn = 0.70f - (float)numberOfNukes * 0.10f;
+		nukeTaskAudio.volume = volumeIn;
+		Debug.Log ("Nukes decemented, current volume: " + volumeIn);
+		nukeTaskAudio.Play ();
+
 		if (numberOfNukes != 0) {
 			numberOfNukes--;
+
+
 			Debug.Log ("Decremented, new number of nukes: " + numberOfNukes);
 			checkTaskComplete ();
 		}
