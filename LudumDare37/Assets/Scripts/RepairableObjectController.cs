@@ -27,6 +27,10 @@ public class RepairableObjectController : MonoBehaviour, IRepairable {
 			repairableObjecttaskController.decrementNumberOfRepairableObjects ();
 			transform.Find ("Smoke").GetComponent<ParticleSystem> ().Stop ();
 			transform.Find ("SparksSubtle").GetComponent<ParticleSystem> ().Stop();
+			AudioSource audioSource = GetComponent<AudioSource> ();
+			if (audioSource != null) {
+				audioSource.PlayDelayed(0.4f);
+			}
 
 		}
 	}
