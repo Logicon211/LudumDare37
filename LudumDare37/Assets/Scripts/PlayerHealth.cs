@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour {
 	public GameObject redSuperDeathOverlayObject;
 	public AudioClip player_hurt;
 
-	AudioSource audio;
+	public AudioSource audio;
 	private Image redDeathImage;
 	private Image redSuperDeathImage;
 
@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Start () {
 		redDeathImage = redDeathOverlayObject.GetComponent<Image> ();
 		redSuperDeathImage = redSuperDeathOverlayObject.GetComponent<Image> ();
-		audio = GetComponent<AudioSource>();
+		//audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -48,7 +48,9 @@ public class PlayerHealth : MonoBehaviour {
 		Debug.Log("setting health to" + health);
 		Debug.Log("setting temp to" + temp);
 
-		audio.PlayOneShot(player_hurt, 1f);
+		audio.clip = player_hurt;
+		audio.Play ();
+		//audio.PlayOneShot(player_hurt, 1f);
     }
 
     public int GetHealth()
